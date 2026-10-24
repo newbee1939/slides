@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "marp --input-dir talks --output dist",
+    "pdf": "marp --pdf"
+  },
+  "devDependencies": {
+    "@marp-team/marp-cli": "4.5.1"
+  }
+}
