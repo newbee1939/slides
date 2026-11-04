@@ -13,7 +13,7 @@ h6o / Tamachi.sre#7 2026-11-11
 
 h6o / SREとして働いている
 
-## ゴール
+## 今日のゴール
 
 - 社内MCP基盤を構築する際の一つの選択肢を知る
 - 注意点を知る
@@ -40,6 +40,8 @@ Zero Trust的な考え方
 
 <!-- 画像貼る？ -->
 
+アーキテクチャのポイントを話す前に、いくつか事前知識を説明。
+
 ## Cloudflare MCP Portalとは
 
 - 社内 MCP の唯一の入口。Claude 向けの OAuth の窓口になり、各サーバーの Access ポリシーで見せるサーバーを、Portal のツール設定で見せるツールを絞って中継する
@@ -49,6 +51,11 @@ Zero Trust的な考え方
 - Cloud Run の内側から Cloudflare に向けて張る通り道。Cloud Run 側に外から入る口を開けずに済む
 
 ## アーキテクチャのポイント
+
+- なるべく「閉じる」
+- 口は最小限にする
+
+##　アーキテクチャのポイント詳細
 
 - Cloud RunのIngressはinternal
 - 認証・認可はCloudflareに任せる
