@@ -40,9 +40,13 @@ Zero Trust的な考え方
 
 <!-- 画像貼る？ -->
 
-## Cloudflare MCP Portal
+## Cloudflare MCP Portalとは
 
-## Cloudflare Tunnel
+- 社内 MCP の唯一の入口。Claude 向けの OAuth の窓口になり、各サーバーの Access ポリシーで見せるサーバーを、Portal のツール設定で見せるツールを絞って中継する
+
+## Cloudflare Tunnelとは
+
+- Cloud Run の内側から Cloudflare に向けて張る通り道。Cloud Run 側に外から入る口を開けずに済む
 
 ## アーキテクチャのポイント
 
@@ -51,6 +55,7 @@ Zero Trust的な考え方
     - MCP Serverの仕様をシンプルに保てる
 - Cloudflare Tunnelにより、内向きの通信を完全に遮断
 - Private hostname routeを使うことで内部通信のみ許可
+    - Portal は Gateway を経由して、Tunnel の private ホスト名に届きます（2026 年 9 月に追加された機能です。変更履歴）。
 
 ## ぶつかった壁・どう解消したか
 
