@@ -13,3 +13,8 @@ cp -r talks/2026-01-01-sample talks/YYYY-MM-DD-slug  # 新しい登壇
 npm run build                                       # dist/ に HTML
 npm run pdf -- talks/YYYY-MM-DD-slug/index.md -o YYYY-MM-DD-slug.pdf  # Speaker Deck 用（要 Chrome）
 ```
+
+## プレゼンのTips
+
+- いかに認知の負荷（聞き手が理解するのに使う頭の容量）を下げるか
+- 徹底的に相手の視点に立つ
