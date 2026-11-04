@@ -11,70 +11,94 @@ h6o / Tamachi.sre#7 2026-11-11
 
 ## 自己紹介
 
-h6o / SREとして働いている
+h6o / SRE として働いています
+
+---
 
 ## 今日のゴール
 
-- 社内MCP基盤を構築する際の一つの選択肢を知る
-- 注意点を知る
+- 社内 MCP 基盤を構築するときの選択肢を 1 つ知る
+- その構成での注意点を知る
+
+---
 
 ## 背景
 
 - ビジネス側のメンバー（非エンジニア）にも、社内のデータを Claude から使ってほしいという依頼があった
-- 例えば「この商材で過去に似た施策をやったことがあるか調べて」と Claude に頼むだけで、社内の施策データベースを検索できる
-- 社内には API がすでにありますが、ビジネス側のメンバーが API を直接使うのは現実的ではありません。API ごとに URL や認証方式が違いますし、利用者一人ひとりに API キーを配るのはセキュリティ的にも危ないです
-- API の機能を MCP（Model Context Protocol）で提供することに
+  - 例：「この商材で過去に似た施策をやったことがあるか調べて」と頼むだけで、社内の施策データベースを検索できる
+- 社内 API はすでにあるが、ビジネス側のメンバーが直接使うのは現実的ではない
+  - API ごとに URL や認証方式が違う
+  - 利用者一人ひとりに API キーを配るのはセキュリティ的に危ない
+- そこで、API の機能を MCP（Model Context Protocol）で提供することにした
 
-## アーキテクチャ制約
+---
 
-- IPで制限するのは難しい
-- 例えばClaudeの場合、通信は社内ではなく
-    -  160.79.104.0/21 と 153.61.208.0/20 からくる
-- IP制限ではなく、
+## アーキテクチャの制約
+
+- IP アドレスで制限するのは難しい
+  - 例えば Claude の場合、通信は社内からではなく `160.79.104.0/21` と `153.61.208.0/20` から来る
+- そこで IP 制限ではなく、次の方針を取った
 
 > 入口（Portal）だけをインターネットに公開し、リクエストのたびに認証・認可を行う。MCP サーバー本体はインターネットから届かない場所に置く
 
-Zero Trust的な考え方
+→ Zero Trust の考え方
+
+---
 
 ## アーキテクチャ
 
 <!-- 画像貼る？ -->
 
-アーキテクチャのポイントを話す前に、いくつか事前知識を説明。
+ポイントを話す前に、前提となる知識を説明します
 
-## Cloudflare MCP Portalとは
+---
 
-- 社内 MCP の唯一の入口。Claude 向けの OAuth の窓口になり、各サーバーの Access ポリシーで見せるサーバーを、Portal のツール設定で見せるツールを絞って中継する
+## Cloudflare MCP Server Portal とは
 
-## Cloudflare Tunnelとは
+- 社内 MCP の唯一の入口
+- Claude に対して OAuth の窓口になる
+- 見せるサーバーを Access ポリシーで、見せるツールを Portal のツール設定で絞って中継する
 
-- Cloud Run の内側から Cloudflare に向けて張る通り道。Cloud Run 側に外から入る口を開けずに済む
+---
+
+## Cloudflare Tunnel とは
+
+- Cloud Run の内側から Cloudflare に向けて張る通り道
+- Cloud Run 側に、外から入る口を開けずに済む
+
+---
 
 ## アーキテクチャのポイント
 
 - なるべく「閉じる」
 - 口は最小限にする
 
-##　アーキテクチャのポイント詳細
+---
 
-- Cloud RunのIngressはinternal
-- 認証・認可はCloudflareに任せる
-    - MCP Serverの仕様をシンプルに保てる
-- Cloudflare Tunnelにより、内向きの通信を完全に遮断
-- Private hostname routeを使うことで内部通信のみ許可
-    - Portal は Gateway を経由して、Tunnel の private ホスト名に届きます（2026 年 9 月に追加された機能です。変更履歴）。
+## アーキテクチャのポイント（詳細）
 
-## ぶつかった壁・どう解消したか
+- Cloud Run の ingress は `internal`
+- 認証・認可は Cloudflare に任せる
+  - MCP サーバーの実装をシンプルに保てる
+- Cloudflare Tunnel で、外から入ってくる通信を完全に遮断
+- Private hostname route で、内部からの通信だけを許可
+  - Portal は Gateway を経由して Tunnel の private ホスト名に届く（2026 年 9 月に追加された機能。[変更履歴](https://developers.cloudflare.com/changelog/post/2026-09-22-private-mcp-servers/)）
 
-- WARP 端末から Portal を迂回して届いてしまった
-    - GatewayのTraffic SourceをPortalからに制限
-        - 特定のMCP Serverに対するアクセスをMCP Portalからのアクセスのみに制限できる
-- 同一MCPでアクセス可能な人を絞りたい場合
-    - 論理MCP
-        - MCPごとに特定のユーザーと特定のツールを許可
+---
+
+## ぶつかった壁と解決策
+
+- WARP 端末から Portal を迂回して MCP サーバーに届いてしまった
+  - Gateway の Traffic Source で、Portal から来た通信だけを通すようにした
+    - 特定の MCP サーバーへのアクセスを、Portal 経由のものだけに制限できる
+- 同じ MCP サーバーでも、人によって使えるツールを変えたい
+  - 論理 MCP で対応
+    - 同じサーバーを Portal に複数登録し、それぞれで許可するユーザーとツールを分ける
+
+---
 
 ## まとめ
 
-- Cloudflare MCP Portalを使えばMCP基盤を簡単に作れる
-- MCP PortalとCloudflare Tunnelを組み合わせることでセキュアな構成に
-- GatewayへのアクセスをPortalのみに制限しないとWARPなどGatewayを経由する通信であればMCP Serverに直接アクセスできてしまうので注意
+- Cloudflare MCP Server Portal を使えば、MCP 基盤を簡単に作れる
+- Portal と Cloudflare Tunnel を組み合わせると、セキュアな構成にできる
+- ただし Gateway へのアクセスを Portal だけに制限しないと、WARP など Gateway を経由する通信から MCP サーバーに直接届いてしまうので注意
