@@ -11,7 +11,7 @@ paginate: true
 
 ## 自己紹介
 
-- hide
+- h6o
     - @newbee1939
 - 開発エンジニア -> SRE
 - 趣味
