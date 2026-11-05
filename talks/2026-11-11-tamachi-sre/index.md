@@ -137,13 +137,13 @@ style: |
 
 ![w:920](architecture.svg)
 
-ポイントを話す前に、前提となる知識を説明します
+<!-- ポイントを話す前に、前提となる知識を説明します -->
 
 ---
 
 ## Cloudflare MCP Server Portal とは
 
-- 複数の MCP サーバーを 1 つの URL にまとめ、Cloudflare Access の認証・認可をかけて提供する Cloudflare Zero Trust の機能
+- 複数の MCP サーバーを 1 つの URL にまとめ、Cloudflare Access（誰を通すかを判定するアクセス制御機能）の認証・認可をかけて提供する Cloudflare Zero Trust の機能
 - 今回の構成では
   - 社内 MCP の唯一の入口
   - Claude に対して OAuth の窓口になる
@@ -170,17 +170,17 @@ style: |
 ## アーキテクチャのポイント（詳細）
 
 - Cloud Run の ingress は `internal`
-- 認証・認可は Cloudflare（Access + Entra ID）に任せる
+- 認証・認可は Cloudflare Access と Entra ID（Microsoft の ID 基盤）に任せる
   - MCP サーバーの実装をシンプルに保てる
 - Cloudflare Tunnel で、MCP サーバーにインターネット側の入口を作らない
-- Private hostname route で、自社の Gateway を通る通信だけが届くようにする
+- Private hostname route で、自社の Gateway（Cloudflare 上で通信を検査・制御する関所）を通る通信だけが届くようにする
   - Portal は Gateway を経由して Tunnel の private ホスト名に届く（2026 年 9 月に追加された機能。[変更履歴](https://developers.cloudflare.com/changelog/post/2026-09-22-private-mcp-servers/)）
 
 ---
 
 ## ぶつかった壁と解決策
 
-- WARP 端末から Portal を迂回して MCP サーバーに届いてしまった
+- WARP 端末（通信を Gateway に送るアプリを入れた社内 PC）から Portal を迂回して MCP サーバーに届いてしまった
   - 原因: private は「Gateway 経由なら届く」であって「Portal からしか届かない」ではなかった
   - 対処: Gateway の Traffic Source（通信の入口）が Portal 以外なら、MCP サーバー宛てを Block
 - 同じ MCP サーバーでも、人によって使えるツールを変えたい
