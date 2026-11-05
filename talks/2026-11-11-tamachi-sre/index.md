@@ -52,7 +52,7 @@ paginate: true
 
 ## アーキテクチャ
 
-
+![w:900](architecture.svg)
 
 ポイントを話す前に、前提となる知識を説明します
 
