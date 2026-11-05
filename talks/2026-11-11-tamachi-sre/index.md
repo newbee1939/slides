@@ -60,24 +60,24 @@ paginate: true
 
 ## Cloudflare MCP Server Portal とは
 
-- 一般的には：複数の MCP サーバーを 1 つの URL にまとめ、Cloudflare Access の認証・認可をかけて提供する Cloudflare Zero Trust の機能
+- 複数の MCP サーバーを 1 つの URL にまとめ、Cloudflare Access の認証・認可をかけて提供する Cloudflare Zero Trust の機能
 - 今回の構成では
   - 社内 MCP の唯一の入口
   - Claude に対して OAuth の窓口になる
-  - 見せるサーバーを Access ポリシーで、見せるツールを Portal のツール設定で絞って中継する
+  - 見せるMCPサーバーを Access ポリシーで、見せるツールを Portal のツール設定で絞って中継する
 
 ---
 
 ## Cloudflare Tunnel とは
 
-- 一般的には：サーバーの側で動く cloudflared（Tunnel のクライアント）が Cloudflare に外向きの接続を張り、その接続を通してサービスを公開する仕組み。公開 IP も、外から受け付けるポートも不要
+- サーバーの側で動く cloudflared（Tunnel のクライアント）が Cloudflare に外向きの接続を張り、その接続を通してサービスを公開する仕組み。公開 IP も、外から受け付けるポートも不要
 - 今回の構成では
   - Cloud Run の内側から Cloudflare に向けて張る通り道
   - Cloud Run 側に、外から入る口を開けずに済む
 
 ---
 
-## アーキテクチャのポイント（抽象）
+## アーキテクチャのポイント
 
 - なるべく「閉じる」
 - 口は最小限にする
