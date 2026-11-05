@@ -1,7 +1,86 @@
 ---
 marp: true
-paginate: true
+theme: default
+style: |
+  :root {
+    --sky: #8AC2DD;
+    --sky-deep: #3D7FA0;
+    --sky-soft: #D6EAF4;
+    --sky-pale: #F1F8FC;
+    --ink: #33475B;
+  }
+  section {
+    background: var(--sky-pale);
+    color: var(--ink);
+    font-family: "Hiragino Maru Gothic ProN", "Zen Maru Gothic", sans-serif;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 1.6;
+    padding: 150px 80px 48px;
+    align-content: start !important;
+  }
+  h2 {
+    position: absolute;
+    top: 52px;
+    left: 80px;
+    right: 80px;
+    margin: 0;
+    padding-left: 24px;
+    color: var(--sky-deep);
+    font-size: 42px;
+    font-weight: 700;
+  }
+  h2::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10%;
+    height: 80%;
+    width: 10px;
+    border-radius: 5px;
+    background: var(--sky);
+  }
+  strong { color: var(--sky-deep); }
+  a { color: var(--sky-deep); }
+  code { background: var(--sky-soft); color: var(--sky-deep); border-radius: 8px; padding: 2px 8px; }
+  ul ul { font-size: 0.9em; }
+  li::marker { color: var(--sky); }
+  blockquote {
+    background: var(--sky-pale);
+    border: none;
+    border-radius: 20px;
+    color: var(--ink);
+    padding: 16px 28px;
+    margin: 16px 0;
+  }
+  blockquote::before, blockquote::after { content: none; }
+  section.lead {
+    background:
+      radial-gradient(circle at 12% 18%, rgba(255,255,255,0.45) 0 140px, transparent 141px),
+      radial-gradient(circle at 90% 85%, rgba(255,255,255,0.35) 0 200px, transparent 201px),
+      linear-gradient(135deg, var(--sky) 0%, var(--sky-soft) 100%);
+    padding: 48px 80px;
+    align-content: center !important;
+    text-align: center;
+  }
+  section.lead::before { content: none; }
+  section.lead h1 { color: #FFFFFF; font-size: 52px; font-weight: 700; line-height: 1.5; text-shadow: 0 2px 8px rgba(61,127,160,0.35); }
+  section.lead p { color: var(--ink); font-size: 30px; }
+  section.profile {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    column-gap: 48px;
+    align-items: start;
+  }
+  section.profile ul { grid-column: 1; grid-row: 1; margin: 0; }
+  section.profile p { grid-column: 2; grid-row: 1; margin: 0; }
+  section.profile img { border-radius: 50%; border: 8px solid var(--sky-soft); }
+  section.figure { padding-top: 130px; }
+  section.figure p { text-align: center; margin: 4px 0; font-size: 24px; }
+  section.figure img { border-radius: 16px; }
 ---
+
+<!-- _class: lead -->
 
 # Cloudflare MCP Server Portal × Tunnel × Cloud Run で社内 MCP 基盤を構築した話
 
@@ -9,9 +88,11 @@ paginate: true
 
 ---
 
+<!-- _class: profile -->
+
 ## 自己紹介
 
-![w:300](h6o.jpeg)
+![w:280](h6o.jpeg)
 
 - h6o
     - @newbee1939
@@ -52,9 +133,11 @@ paginate: true
 
 ---
 
+<!-- _class: figure -->
+
 ## アーキテクチャ
 
-![](architecture.svg)
+![w:920](architecture.svg)
 
 ポイントを話す前に、前提となる知識を説明します
 
@@ -115,5 +198,7 @@ paginate: true
 - ただし Gateway へのアクセスを Portal だけに制限しないと、WARP など Gateway を経由する通信から MCP サーバーに直接届いてしまうので注意
 
 ---
+
+<!-- _class: lead -->
 
 社内 MCP 基盤を構築するときの選択肢を 1 つとなれば幸いです
