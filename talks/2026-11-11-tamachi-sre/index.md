@@ -123,13 +123,11 @@ style: |
 
 ## アーキテクチャの制約
 
-- Claude アプリの場合、通信は社内に限定されないIP範囲（`160.79.104.0/21`, `153.61.208.0/20`） から来る
-- MCPへのアクセスを社内 IP アドレスで制限するのは難しい
+- Claude アプリからの通信は、社内ではなく Anthropic の IP 範囲（`160.79.104.0/21`, `153.61.208.0/20`）から来る
+- そのため、MCP へのアクセスを社内 IP アドレスで制限するのは難しい
 - そこで IP 制限ではなく、次の方針を取った
 
-> 入口（MCP Portal）だけをインターネットに公開し、リクエストのたびに認証・認可を行う。MCP サーバー本体はインターネットから届かない場所に置く
-
-> Zero Trust の考え方
+> 入口（MCP Portal）だけをインターネットに公開し、リクエストのたびに認証・認可を行う。MCP サーバー本体はインターネットから届かない場所に置く（Zero Trust の考え方）
 
 ---
 
@@ -149,7 +147,7 @@ style: |
 - 今回の構成では
   - 社内 MCP の唯一の入口
   - Claude に対して OAuth の窓口になる
-  - 見せるMCPサーバーを Access ポリシーで、見せるツールを Portal のツール設定で絞って中継する
+  - 見せる MCP サーバーを Access ポリシーで、見せるツールを Portal のツール設定で絞って中継する
 
 ---
 
@@ -172,10 +170,10 @@ style: |
 ## アーキテクチャのポイント（詳細）
 
 - Cloud Run の ingress は `internal`
-- 認証・認可は Cloudflare に任せる
+- 認証・認可は Cloudflare（Access + Entra ID）に任せる
   - MCP サーバーの実装をシンプルに保てる
-- Cloudflare Tunnel で、外から入ってくる通信を完全に遮断
-- Private hostname route で、内部からの通信だけを許可
+- Cloudflare Tunnel で、MCP サーバーにインターネット側の入口を作らない
+- Private hostname route で、自社の Gateway を通る通信だけが届くようにする
   - Portal は Gateway を経由して Tunnel の private ホスト名に届く（2026 年 9 月に追加された機能。[変更履歴](https://developers.cloudflare.com/changelog/post/2026-09-22-private-mcp-servers/)）
 
 ---
@@ -183,8 +181,8 @@ style: |
 ## ぶつかった壁と解決策
 
 - WARP 端末から Portal を迂回して MCP サーバーに届いてしまった
-  - Gateway の Traffic Source で、Portal から来た通信だけを通すようにした
-    - 特定の MCP サーバーへのアクセスを、Portal 経由のものだけに制限できる
+  - 原因: private は「Gateway 経由なら届く」であって「Portal からしか届かない」ではなかった
+  - 対処: Gateway の Traffic Source（通信の入口）が Portal 以外なら、MCP サーバー宛てを Block
 - 同じ MCP サーバーでも、人によって使えるツールを変えたい
   - 論理 MCP で対応
     - 同じサーバーを Portal に複数登録し、それぞれで許可するユーザーとツールを分ける
@@ -195,10 +193,10 @@ style: |
 
 - Cloudflare MCP Server Portal を使えば、MCP 基盤を簡単に作れる
 - Portal と Cloudflare Tunnel を組み合わせると、セキュアな構成にできる
-- ただし Gateway へのアクセスを Portal だけに制限しないと、WARP など Gateway を経由する通信から MCP サーバーに直接届いてしまうので注意
+- ただし MCP サーバー宛ての通信を Portal 経由だけに制限しないと、WARP など Gateway を経由する通信から MCP サーバーに直接届いてしまうので注意
 
 ---
 
 <!-- _class: lead -->
 
-社内 MCP 基盤を構築するときの選択肢を 1 つとなれば幸いです
+社内 MCP 基盤を構築するときの選択肢の 1 つになれば幸いです
