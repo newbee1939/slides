@@ -11,6 +11,8 @@ paginate: true
 
 ## 自己紹介
 
+![w:300](h6o.jpeg)
+
 - h6o
     - @newbee1939
 - 開発エンジニア -> SRE
@@ -52,7 +54,7 @@ paginate: true
 
 ## アーキテクチャ
 
-![w:900](architecture.svg)
+![](architecture.svg)
 
 ポイントを話す前に、前提となる知識を説明します
 
