@@ -154,9 +154,10 @@ style: |
 ## Cloudflare Tunnel とは
 
 - サーバーの側で動く cloudflared（Tunnel のクライアント）が Cloudflare に外向きの接続を張り、その接続を通してサービスを公開する仕組み。公開 IP も、外から受け付けるポートも不要
-- 今回の構成では
-  - Cloud Run の内側から Cloudflare に向けて張る通り道
-  - Cloud Run 側に、外から入る口を開けずに済む
+- つなぎ方は 2 種類
+  - Published application: インターネットに公開するホスト名を作り、Tunnel につなぐ
+  - Private hostname route: 公開せず、自社の Gateway を通る通信だけが届く（**今回はこちら**）
+- 今回の構成では、Cloud Run の内側から張るので、外から入る口を開けずに済む
 
 ---
 
