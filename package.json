@@ -1,8 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "build": "marp --input-dir talks --output dist",
-    "pdf": "marp --pdf"
+    "build": "marp --input-dir talks --output dist && rsync -a --exclude='*.md' talks/ dist/",
+    "pdf": "marp --pdf --allow-local-files"
   },
   "devDependencies": {
     "@marp-team/marp-cli": "4.5.1"
