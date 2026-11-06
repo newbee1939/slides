@@ -178,6 +178,9 @@ style: |
 
 ## アーキテクチャのポイント（詳細）
 
+<!-- TODO: 一つずつ図で示してもいいかも -->
+<!-- TODO: 画像は増やしたい -->
+
 - Cloud Run の ingress は `internal`
 - 認証・認可は Cloudflare Access と Entra ID（Microsoft の ID 基盤）に任せる
   - MCP サーバーの実装をシンプルに保てる
