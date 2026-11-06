@@ -165,6 +165,8 @@ style: |
 
 ## アーキテクチャ（再掲）
 
+<!-- TODO: Entraは直接書かない方がいいか？ -->
+
 ![w:920](architecture.svg)
 
 ---
