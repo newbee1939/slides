@@ -2,6 +2,7 @@
 marp: true
 theme: default
 style: |
+  @import url('https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap');
   :root {
     --sky: #8AC2DD;
     --sky-deep: #3D7FA0;
@@ -12,7 +13,7 @@ style: |
   section {
     background: var(--sky-pale);
     color: var(--ink);
-    font-family: "Hiragino Maru Gothic ProN", "Zen Maru Gothic", sans-serif;
+    font-family: "BIZ UDPGothic", "Hiragino Sans", sans-serif;
     font-weight: 500;
     font-size: 28px;
     line-height: 1.6;
@@ -26,7 +27,7 @@ style: |
     right: 80px;
     margin: 0;
     padding-left: 24px;
-    color: var(--sky-deep);
+    color: var(--ink);
     font-size: 42px;
     font-weight: 700;
   }
@@ -55,29 +56,27 @@ style: |
   }
   blockquote::before, blockquote::after { content: none; }
   section.lead {
-    background:
-      radial-gradient(circle at 12% 18%, rgba(255,255,255,0.45) 0 140px, transparent 141px),
-      radial-gradient(circle at 90% 85%, rgba(255,255,255,0.35) 0 200px, transparent 201px),
-      linear-gradient(135deg, var(--sky) 0%, var(--sky-soft) 100%);
+    background: var(--sky-pale);
     padding: 48px 80px;
     align-content: center !important;
     text-align: center;
   }
   section.lead::before { content: none; }
-  section.lead h1 { color: #FFFFFF; font-size: 52px; font-weight: 700; line-height: 1.5; text-shadow: 0 2px 8px rgba(61,127,160,0.35); }
+  section.lead h1 { color: var(--ink); font-size: 52px; font-weight: 700; line-height: 1.5; }
   section.lead p { color: var(--ink); font-size: 30px; }
   section.profile {
     display: grid;
-    grid-template-columns: 1fr 300px;
+    grid-template-columns: 1fr 420px;
     column-gap: 48px;
     align-items: start;
   }
   section.profile ul { grid-column: 1; grid-row: 1; margin: 0; }
   section.profile p { grid-column: 2; grid-row: 1; margin: 0; }
   section.profile img { border-radius: 50%; border: 8px solid var(--sky-soft); }
-  section.figure { padding-top: 130px; }
-  section.figure p { text-align: center; margin: 4px 0; font-size: 24px; }
-  section.figure img { border-radius: 16px; }
+  section.figure { padding-top: 130px; display: flex !important; flex-direction: column; }
+  section.figure p { margin: 4px 0; }
+  section.figure p:has(> img) { flex: 1 1 0; min-height: 0; margin-top: 40px; text-align: center; }
+  section.figure img { width: 100%; height: 100%; object-fit: contain; }
 ---
 
 <!-- _class: lead -->
@@ -134,7 +133,7 @@ style: |
 
 ## アーキテクチャ
 
-![w:1500](architecture.svg)
+![](architecture.svg)
 
 ---
 
@@ -142,22 +141,24 @@ style: |
 
 ---
 
+<!-- _class: figure -->
+
 ## Cloudflare MCP Server Portal とは
 
 - 複数の MCP サーバーを 1 つの URL にまとめ、Cloudflare Access（誰を通すかを判定するアクセス制御機能）の認証・認可をかけて提供する Cloudflare の機能
 
-<!-- 図を追加 -->
+![](fig-portal.svg)
 
 ---
+
+<!-- _class: figure -->
 
 ## Cloudflare Tunnel とは
 
 - サーバー側から Cloudflare へ暗号化された通信経路（Tunnel）を張り、**グローバル IP やポート開放なし**でサービスを届けられる仕組み
-- 主なつなぎ方は 2 つ
-  - Published application: インターネットに公開するホスト名を作り、Tunnel につなぐ
-  - Private hostname: 公開せず、Cloudflare Gateway を通る通信だけが届く（**今回はこちら**）
+- 主なつなぎ方は 2 つ（今回は **Private hostname**）
 
-<!-- 図を追加 -->
+![](fig-tunnel.svg)
 
 ---
 
@@ -165,7 +166,7 @@ style: |
 
 ## アーキテクチャ（再掲）
 
-![w:1500](architecture.svg)
+![](architecture.svg)
 
 ---
 
@@ -176,38 +177,50 @@ style: |
 
 ---
 
-## なるべく「閉じる」: Cloud Run の ingress は `internal`
+<!-- _class: figure -->
 
-<!-- 図を貼る -->
+## 閉じる ①: Cloud Run の ingress を `internal` に
 
----
-
-## Cloudflare Tunnel で、MCP サーバーにインターネット側の入口を作らない
-
-<!-- 図を貼る -->
+![](fig-close-ingress.svg)
 
 ---
 
-## Private hostname で、Cloudflare Gateway を通る通信だけが届くようにする
+<!-- _class: figure -->
+
+## 閉じる ②: Tunnel で外から入る口を作らない
+
+![](fig-close-tunnel.svg)
+
+---
+
+<!-- _class: figure -->
+
+## 閉じる ③: Private hostname でつなぐ
 
 Portal は Gateway を経由して Tunnel の Private hostname に届く（2026 年 9 月に追加された機能。[Private MCP server support for MCP server portals](https://developers.cloudflare.com/changelog/post/2026-09-22-private-mcp-servers/)）
 
-<!-- 図を貼る -->
+![](fig-close-private.svg)
 
 ---
+
+<!-- _class: figure -->
 
 ## ぶつかった壁
 
 WARP 端末（通信を Gateway に送るアプリを入れた社内 PC）から Portal を迂回して MCP サーバーに届いてしまった
 
-<!-- 図を貼る -->
+![](fig-wall.svg)
+
+---
+
+<!-- _class: figure -->
 
 ## 原因と対処
 
 - 原因: Private hostname は「Gateway 経由なら届く」であって「Portal からしか届かない」ではなかった
-- 対処: Gateway の Traffic Source（通信の入口）が Portal 以外なら、MCP サーバー宛てを Block
+- 対処: Gateway の HTTP ポリシー（Firewall policies > HTTP）で、Traffic Source（通信の入口）が Portal 以外なら MCP サーバー宛てを Block
 
-<!-- 図を貼る -->
+![](fig-fix.svg)
 
 ---
 

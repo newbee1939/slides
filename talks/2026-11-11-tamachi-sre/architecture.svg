@@ -1,67 +1,67 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1920" height="967" viewBox="0 96 1920 967"><defs><marker id="a9CA3AF" viewBox="0 0 10 10" refX="3" refY="5" markerWidth="14" markerHeight="14" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 L3,5 z" fill="#9CA3AF"/></marker><marker id="aEA580C" viewBox="0 0 10 10" refX="3" refY="5" markerWidth="14" markerHeight="14" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 L3,5 z" fill="#EA580C"/></marker><marker id="aDC2626" viewBox="0 0 10 10" refX="3" refY="5" markerWidth="14" markerHeight="14" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 L3,5 z" fill="#DC2626"/></marker><marker id="a6B7280" viewBox="0 0 10 10" refX="3" refY="5" markerWidth="14" markerHeight="14" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 L3,5 z" fill="#6B7280"/></marker></defs>
-<rect x="0" y="96" width="1920" height="967" fill="#FFFFFF"/>
+<rect x="0" y="96" width="1920" height="967" rx="28" fill="#FFFFFF"/>
 <rect x="470" y="212" width="714" height="649" rx="16" fill="none" stroke="#F4B183" stroke-width="2"/>
-<text x="494" y="250" font-family="'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="22" font-weight="700" fill="#C2410C" text-anchor="start">Cloudflare</text>
+<text x="494" y="250" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="22" font-weight="700" fill="#C2410C" text-anchor="start">Cloudflare</text>
 <rect x="1300" y="500" width="564" height="507" rx="16" fill="none" stroke="#93B4E8" stroke-width="2"/>
-<text x="1324" y="538" font-family="'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="22" font-weight="700" fill="#1D4ED8" text-anchor="start">Google Cloud</text>
+<text x="1324" y="538" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="22" font-weight="700" fill="#1D4ED8" text-anchor="start">Google Cloud</text>
 <rect x="1322" y="556" width="320" height="429" rx="10" fill="none" stroke="#93B4E8" stroke-width="1.8" stroke-dasharray="7 5"/>
-<text x="1342" y="588" font-family="'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="19" font-weight="700" fill="#1D4ED8" text-anchor="start">Cloud Run</text>
-<text x="1342" y="616" font-family="'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="16" font-weight="500" fill="#1D4ED8" text-anchor="start">ingress: internal</text>
-<text x="168" y="250" font-family="'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="24" font-weight="700" fill="#1F2937" text-anchor="middle">社員</text>
+<text x="1342" y="588" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="19" font-weight="700" fill="#1D4ED8" text-anchor="start">Cloud Run</text>
+<text x="1342" y="616" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="16" font-weight="500" fill="#1D4ED8" text-anchor="start">ingress: internal</text>
+<text x="168" y="250" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="24" font-weight="700" fill="#1F2937" text-anchor="middle">社員</text>
 <rect x="56" y="324" width="224" height="136" rx="10" fill="#FFFFFF" stroke="#9CA3AF" stroke-width="2"/>
-<text x="168.0" y="388.0" font-family="'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="24" font-weight="700" fill="#1F2937" text-anchor="middle">Claude</text>
-<text x="168.0" y="420.0" font-family="'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="16" font-weight="400" fill="#6B7280" text-anchor="middle">claude.ai / Claude Code</text>
+<text x="168.0" y="388.0" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="24" font-weight="700" fill="#1F2937" text-anchor="middle">Claude</text>
+<text x="168.0" y="420.0" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="16" font-weight="400" fill="#6B7280" text-anchor="middle">claude.ai / Claude Code</text>
 <rect x="56" y="655" width="224" height="114" rx="10" fill="#FFFFFF" stroke="#9CA3AF" stroke-width="2"/>
-<text x="168.0" y="721.0" font-family="'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="24" font-weight="700" fill="#1F2937" text-anchor="middle">WARP 端末</text>
+<text x="168.0" y="721.0" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="24" font-weight="700" fill="#1F2937" text-anchor="middle">WARP 端末</text>
 <rect x="504" y="324" width="270" height="136" rx="10" fill="#FFFFFF" stroke="#F4B183" stroke-width="2"/>
-<text x="639.0" y="388.0" font-family="'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="24" font-weight="700" fill="#1F2937" text-anchor="middle">MCP Server Portal</text>
-<text x="639.0" y="420.0" font-family="'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="16" font-weight="400" fill="#6B7280" text-anchor="middle">mcp.example.com</text>
+<text x="639.0" y="388.0" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="24" font-weight="700" fill="#1F2937" text-anchor="middle">MCP Server Portal</text>
+<text x="639.0" y="420.0" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="16" font-weight="400" fill="#6B7280" text-anchor="middle">mcp.example.com</text>
 <rect x="966" y="335" width="184" height="114" rx="10" fill="#FFFFFF" stroke="#F4B183" stroke-width="2"/>
-<text x="1058.0" y="401.0" font-family="'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="24" font-weight="700" fill="#1F2937" text-anchor="middle">Access</text>
+<text x="1058.0" y="401.0" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="24" font-weight="700" fill="#1F2937" text-anchor="middle">Access</text>
 <rect x="934" y="644" width="216" height="136" rx="10" fill="#FFFFFF" stroke="#F4B183" stroke-width="2"/>
-<text x="1042.0" y="708.0" font-family="'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="24" font-weight="700" fill="#1F2937" text-anchor="middle">Tunnel</text>
-<text x="1042.0" y="740.0" font-family="'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="16" font-weight="400" fill="#6B7280" text-anchor="middle">Private hostname</text>
+<text x="1042.0" y="708.0" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="24" font-weight="700" fill="#1F2937" text-anchor="middle">Tunnel</text>
+<text x="1042.0" y="740.0" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="16" font-weight="400" fill="#6B7280" text-anchor="middle">Private hostname</text>
 <rect x="1464" y="324" width="236" height="136" rx="10" fill="#FFFFFF" stroke="#9CA3AF" stroke-width="2"/>
-<text x="1582.0" y="401.0" font-family="'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="24" font-weight="700" fill="#1F2937" text-anchor="middle">IdP</text>
+<text x="1582.0" y="401.0" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="24" font-weight="700" fill="#1F2937" text-anchor="middle">IdP</text>
 <rect x="1364" y="644" width="236" height="136" rx="10" fill="#FFFFFF" stroke="#93B4E8" stroke-width="2"/>
-<text x="1482.0" y="708.0" font-family="'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="24" font-weight="700" fill="#1F2937" text-anchor="middle">cloudflared</text>
-<text x="1482.0" y="740.0" font-family="'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="16" font-weight="400" fill="#6B7280" text-anchor="middle">サイドカー</text>
+<text x="1482.0" y="708.0" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="24" font-weight="700" fill="#1F2937" text-anchor="middle">cloudflared</text>
+<text x="1482.0" y="740.0" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="16" font-weight="400" fill="#6B7280" text-anchor="middle">サイドカー</text>
 <rect x="1364" y="849" width="236" height="114" rx="10" fill="#FFFFFF" stroke="#93B4E8" stroke-width="2"/>
-<text x="1482.0" y="915.0" font-family="'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="24" font-weight="700" fill="#1F2937" text-anchor="middle">MCP サーバー</text>
+<text x="1482.0" y="915.0" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="24" font-weight="700" fill="#1F2937" text-anchor="middle">MCP サーバー</text>
 <rect x="1680" y="849" width="162" height="114" rx="10" fill="#FFFFFF" stroke="#93B4E8" stroke-width="2"/>
-<text x="1761.0" y="915.0" font-family="'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="24" font-weight="700" fill="#1F2937" text-anchor="middle">Cloud SQL</text>
+<text x="1761.0" y="915.0" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="24" font-weight="700" fill="#1F2937" text-anchor="middle">Cloud SQL</text>
 <rect x="504" y="607" width="270" height="210" rx="10" fill="#FFFFFF" stroke="#F4B183" stroke-width="2"/>
-<text x="639" y="656" font-family="'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="24" font-weight="700" fill="#1F2937" text-anchor="middle">Gateway</text>
+<text x="639" y="656" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="24" font-weight="700" fill="#1F2937" text-anchor="middle">Gateway</text>
 <rect x="524" y="684" width="230" height="112" rx="8" fill="#FFFFFF" stroke="#DC2626" stroke-width="1.5"/>
-<text x="639" y="714" font-family="'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="15" font-weight="700" fill="#DC2626" text-anchor="middle">Firewall policy</text>
-<text x="639" y="745" font-family="'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="18" font-weight="500" fill="#1F2937" text-anchor="middle">MCP サーバー宛ては</text>
-<text x="639" y="775" font-family="'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="18" font-weight="700" fill="#DC2626" text-anchor="middle">Portal 経由のみ</text>
+<text x="639" y="714" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="15" font-weight="700" fill="#DC2626" text-anchor="middle">Firewall policy</text>
+<text x="639" y="745" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="18" font-weight="500" fill="#1F2937" text-anchor="middle">MCP サーバー宛ては</text>
+<text x="639" y="775" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="18" font-weight="700" fill="#DC2626" text-anchor="middle">Portal 経由のみ</text>
 <path d="M168,262 L168,312" fill="none" stroke="#6B7280" stroke-width="2.5" marker-end="url(#a6B7280)"/>
 <path d="M280,352 L493,352" fill="none" stroke="#6B7280" stroke-width="2.5" marker-end="url(#a6B7280)"/>
 <path d="M504,432 L291,432" fill="none" stroke="#6B7280" stroke-width="2.5" marker-end="url(#a6B7280)"/>
-<text x="392" y="300" font-family="'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="17" font-weight="700" fill="#6B7280" text-anchor="middle">OAuth（認可）</text>
-<text x="300" y="340" font-family="'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="17" font-weight="500" fill="#6B7280" text-anchor="start">1. 認可リクエスト</text>
-<text x="300" y="462" font-family="'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="17" font-weight="500" fill="#6B7280" text-anchor="start">5. アクセストークン</text>
+<text x="392" y="300" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="17" font-weight="700" fill="#6B7280" text-anchor="middle">OAuth（認可）</text>
+<text x="300" y="340" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="17" font-weight="500" fill="#6B7280" text-anchor="start">1. 認可リクエスト</text>
+<text x="300" y="462" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="17" font-weight="500" fill="#6B7280" text-anchor="start">5. アクセストークン</text>
 <path d="M774,372 L955,372" fill="none" stroke="#6B7280" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#a6B7280)"/>
-<text x="790" y="358" font-family="'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="17" font-weight="500" fill="#6B7280" text-anchor="start">2. ログインを任せる</text>
-<text x="790" y="412" font-family="'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="16" font-weight="500" fill="#6B7280" text-anchor="start">（初回のみ）</text>
+<text x="790" y="358" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="17" font-weight="500" fill="#6B7280" text-anchor="start">2. ログインを任せる</text>
+<text x="790" y="412" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="16" font-weight="500" fill="#6B7280" text-anchor="start">（初回のみ）</text>
 <path d="M1150,372 L1453,372" fill="none" stroke="#6B7280" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#a6B7280)"/>
 <path d="M1464,412 L1161,412" fill="none" stroke="#6B7280" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#a6B7280)"/>
-<text x="1306" y="320" font-family="'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="17" font-weight="700" fill="#6B7280" text-anchor="middle">OIDC（認証）</text>
-<text x="1206" y="358" font-family="'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="17" font-weight="500" fill="#6B7280" text-anchor="start">3. 認証リクエスト</text>
-<text x="1206" y="442" font-family="'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="17" font-weight="500" fill="#6B7280" text-anchor="start">4. ID トークン</text>
+<text x="1306" y="320" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="17" font-weight="700" fill="#6B7280" text-anchor="middle">OIDC（認証）</text>
+<text x="1206" y="358" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="17" font-weight="500" fill="#6B7280" text-anchor="start">3. 認証リクエスト</text>
+<text x="1206" y="442" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="17" font-weight="500" fill="#6B7280" text-anchor="start">4. ID トークン</text>
 <path d="M280,392 L490,392" fill="none" stroke="#EA580C" stroke-width="5" marker-end="url(#aEA580C)"/>
 <path d="M639,460 L639,592" fill="none" stroke="#EA580C" stroke-width="5" marker-end="url(#aEA580C)"/>
 <path d="M774,712 L920,712" fill="none" stroke="#EA580C" stroke-width="5" marker-end="url(#aEA580C)"/>
-<text x="784" y="672" font-family="'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="15" font-weight="500" fill="#EA580C" text-anchor="start">Private hostname で</text>
-<text x="784" y="696" font-family="'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="15" font-weight="500" fill="#EA580C" text-anchor="start">Tunnel へ</text>
+<text x="784" y="672" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="15" font-weight="500" fill="#EA580C" text-anchor="start">Private hostname で</text>
+<text x="784" y="696" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="15" font-weight="500" fill="#EA580C" text-anchor="start">Tunnel へ</text>
 <path d="M1150,712 L1350,712" fill="none" stroke="#EA580C" stroke-width="5" marker-end="url(#aEA580C)"/>
 <path d="M1482,780 L1482,835" fill="none" stroke="#EA580C" stroke-width="5" marker-end="url(#aEA580C)"/>
 <path d="M1600,906 L1666,906" fill="none" stroke="#EA580C" stroke-width="5" marker-end="url(#aEA580C)"/>
 <path d="M1364,675 L1161,675" fill="none" stroke="#6B7280" stroke-width="2.5" marker-end="url(#a6B7280)"/>
-<text x="1236" y="632" font-family="'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="17" font-weight="500" fill="#6B7280" text-anchor="middle">内側から</text>
-<text x="1236" y="656" font-family="'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="17" font-weight="500" fill="#6B7280" text-anchor="middle">接続を張る</text>
+<text x="1236" y="632" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="17" font-weight="500" fill="#6B7280" text-anchor="middle">内側から</text>
+<text x="1236" y="656" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="17" font-weight="500" fill="#6B7280" text-anchor="middle">接続を張る</text>
 <path d="M280,712 L493,712" fill="none" stroke="#DC2626" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#aDC2626)"/>
 <rect x="340" y="694" width="72" height="34" rx="6" fill="#FFFFFF" stroke="#DC2626" stroke-width="2"/>
-<text x="376" y="718" font-family="'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="18" font-weight="700" fill="#DC2626" text-anchor="middle">遮断</text>
+<text x="376" y="718" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="18" font-weight="700" fill="#DC2626" text-anchor="middle">遮断</text>
 </svg>
