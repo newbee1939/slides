@@ -114,7 +114,7 @@ style: |
 ## 背景
 
 - ビジネス側のメンバーも、**社内のデータを Claude から利用したい**という要望があった
-  - 例: AIに「この商材で過去に似た施策をやったことがあるか調べて」と頼むだけで、社内の施策データベースを検索できる
+  - 例: AI に「この商材で過去に似た施策をやったことがあるか調べて」と頼むだけで、社内の施策データベースを検索できる
 - 社内 API はすでにあるが、ビジネス側のメンバーが直接使うのは現実的ではない
   - API ごとに URL や認証方式が違う
   - 利用者一人ひとりに API キーを配るのはセキュリティ的に危ない
@@ -124,8 +124,8 @@ style: |
 
 ## アーキテクチャの制約
 
-- Claude アプリからの通信は、社内ではなく Anthropic の IP 範囲（`160.79.104.0/21`, `153.61.208.0/20`）から来る
-- MCP へのアクセスを社内 IP アドレスで制限するのは難しい
+- Claude からの通信は、社内ではなく Anthropic の IP 範囲（`160.79.104.0/21`, `153.61.208.0/20`）から来る
+- MCP サーバーへのアクセスを社内 IP アドレスで制限するのは難しい
 - IP 制限ではなく、**入口だけをインターネットに公開し、リクエストのたびに認証・認可を行う**。MCP サーバー本体はインターネットから届かない場所に置く
 
 ---
@@ -194,7 +194,7 @@ style: |
 
 ## 閉じる ③: Private hostname でつなぐ
 
-Portal は Gateway を経由して Tunnel の Private hostname に届く（2026 年 9 月に追加された機能。[Private MCP server support for MCP server portals](https://developers.cloudflare.com/changelog/post/2026-09-22-private-mcp-servers/)）
+- Portal は Cloudflare Gateway を経由して Tunnel の Private hostname に届く（2026 年 9 月に追加された機能。[Private MCP server support for MCP server portals](https://developers.cloudflare.com/changelog/post/2026-09-22-private-mcp-servers/)）
 
 ![](fig-close-private.svg)
 
@@ -204,7 +204,7 @@ Portal は Gateway を経由して Tunnel の Private hostname に届く（2026 
 
 ## ぶつかった壁
 
-WARP 端末（通信を Gateway に送るアプリを入れた社内 PC）から Portal を迂回して MCP サーバーに届いてしまった
+- WARP 端末（通信を Gateway に送るアプリを入れた社内 PC）から Portal を迂回して MCP サーバーに届いてしまった
 
 ![](fig-wall.svg)
 

@@ -33,7 +33,7 @@
 <rect x="504" y="607" width="270" height="210" rx="10" fill="#FFFFFF" stroke="#F4B183" stroke-width="2"/>
 <text x="639" y="656" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="24" font-weight="700" fill="#1F2937" text-anchor="middle">Gateway</text>
 <rect x="524" y="684" width="230" height="112" rx="8" fill="#FFFFFF" stroke="#DC2626" stroke-width="1.5"/>
-<text x="639" y="714" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="15" font-weight="700" fill="#DC2626" text-anchor="middle">Firewall policy</text>
+<text x="639" y="714" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="15" font-weight="700" fill="#DC2626" text-anchor="middle">HTTP ポリシー</text>
 <text x="639" y="745" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="18" font-weight="500" fill="#1F2937" text-anchor="middle">MCP サーバー宛ては</text>
 <text x="639" y="775" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="18" font-weight="700" fill="#DC2626" text-anchor="middle">Portal 経由のみ</text>
 <path d="M168,262 L168,312" fill="none" stroke="#6B7280" stroke-width="2.5" marker-end="url(#a6B7280)"/>
