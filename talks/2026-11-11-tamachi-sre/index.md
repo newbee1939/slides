@@ -166,13 +166,6 @@ style: |
 
 ---
 
-## アーキテクチャのポイント
-
-- なるべく「閉じる」
-- 認証・認可は Cloudflare に寄せる
-
----
-
 ## なるべく「閉じる」
 
 Cloud Run の ingress は `internal`
@@ -189,13 +182,6 @@ Cloudflare Tunnel で、MCP サーバーにインターネット側の入口を�
 
 - Private hostname で、Cloudflare Gateway を通る通信だけが届くようにする
   - Portal は Gateway を経由して Tunnel の Private hostname に届く（2026 年 9 月に追加された機能。[Private MCP server support for MCP server portals](https://developers.cloudflare.com/changelog/post/2026-09-22-private-mcp-servers/)）
-
----
-
-## 認証・認可は Cloudflare に寄せる
-
-- ログインと認可は Cloudflare Access と IdP（社員のログインを担うサービス）に任せる
-  - MCP サーバーには認証・認可を実装しない
 
 ---
 
