@@ -167,8 +167,6 @@ style: |
 
 ## アーキテクチャ（再掲）
 
-<!-- TODO: Entraは直接書かない方がいいか？ -->
-
 ![w:920](architecture.svg)
 
 ---
@@ -186,7 +184,7 @@ style: |
 <!-- TODO: 画像は増やしたい -->
 
 - Cloud Run の ingress は `internal`
-- 認証・認可は Cloudflare Access と Entra ID（Microsoft の ID 基盤）に任せる
+- 認証・認可は Cloudflare Access と IdP（社員のログインを担うサービス）に任せる
   - MCP サーバーの実装をシンプルに保てる
 - Cloudflare Tunnel で、MCP サーバーにインターネット側の入口を作らない
 - Private hostname route で、自社の Gateway（Cloudflare 上で通信を検査・制御する関所）を通る通信だけが届くようにする
