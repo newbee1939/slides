@@ -46,6 +46,8 @@ style: |
   code { background: var(--sky-soft); color: var(--sky-deep); border-radius: 8px; padding: 2px 8px; }
   ul ul { font-size: 0.9em; }
   li::marker { color: var(--sky); }
+  ul ul li::marker { color: var(--sky-deep); }
+  li { margin-top: 0.4em; }
   blockquote {
     background: var(--sky-pale);
     border: none;
@@ -84,7 +86,7 @@ style: |
 
 <!-- _class: lead -->
 
-# Cloudflare MCP Server Portal × Cloudflare Tunnel × Cloud Run で社内 MCP 基盤を構築した話
+# Cloudflare MCP Server Portal × Tunnel で社内 MCP 基盤を作った話
 
 2026-11-11 Tamachi.sre#7
 
@@ -170,11 +172,11 @@ style: |
 
 ---
 
-<!-- _class: lead -->
+<style scoped>section > p { font-size: 56px; font-weight: 700; color: var(--sky-deep); }</style>
 
-# なるべく「閉じる」
+## アーキテクチャのポイント
 
-アーキテクチャのポイント
+なるべく「閉じる」
 
 ---
 
@@ -188,7 +190,7 @@ style: |
 
 <!-- _class: figure -->
 
-## 閉じる ②: Cloudflare Tunnel で入口を作らない
+## 閉じる ②: Cloudflare Tunnel で外から入れる口をなくす
 
 ![](fig-close-tunnel.svg)
 
