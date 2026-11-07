@@ -135,7 +135,7 @@ style: |
 
 ## アーキテクチャ
 
-![w:1200](architecture.svg)
+![w:1300](architecture.svg)
 
 ---
 
@@ -146,10 +146,6 @@ style: |
 ## Cloudflare MCP Server Portal とは
 
 - 複数の MCP サーバーを 1 つの URL にまとめ、Cloudflare Access（誰を通すかを判定するアクセス制御機能）の認証・認可をかけて提供する Cloudflare Zero Trust の機能
-- 今回の構成では
-  - 社内 MCP の唯一の入口
-  - Claude に対して OAuth の窓口になる
-  - 見せる MCP サーバーを Access ポリシーで、見せるツールを Portal のツール設定で絞って中継する
 
 ---
 
@@ -175,6 +171,7 @@ style: |
 
 - なるべく「閉じる」
 - 口は最小限にする
+- 論理MCP
 
 ---
 
@@ -189,6 +186,7 @@ style: |
 - Cloudflare Tunnel で、MCP サーバーにインターネット側の入口を作らない
 - Private hostname route で、自社の Gateway（Cloudflare 上で通信を検査・制御する関所）を通る通信だけが届くようにする
   - Portal は Gateway を経由して Tunnel の private ホスト名に届く（2026 年 9 月に追加された機能。[変更履歴](https://developers.cloudflare.com/changelog/post/2026-09-22-private-mcp-servers/)）
+- 論理MCP
 
 ---
 
