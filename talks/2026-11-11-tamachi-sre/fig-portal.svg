@@ -1,22 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="470" viewBox="0 0 1180 470"><defs><marker id="a9CA3AF" viewBox="0 0 10 10" refX="3" refY="5" markerWidth="14" markerHeight="14" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 L3,5 z" fill="#9CA3AF"/></marker><marker id="aEA580C" viewBox="0 0 10 10" refX="3" refY="5" markerWidth="14" markerHeight="14" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 L3,5 z" fill="#EA580C"/></marker><marker id="aDC2626" viewBox="0 0 10 10" refX="3" refY="5" markerWidth="14" markerHeight="14" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 L3,5 z" fill="#DC2626"/></marker><marker id="a6B7280" viewBox="0 0 10 10" refX="3" refY="5" markerWidth="14" markerHeight="14" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 L3,5 z" fill="#6B7280"/></marker></defs>
-<rect width="1180" height="470" rx="20" fill="#FFFFFF"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="450" viewBox="0 0 1180 450"><defs><marker id="a9CA3AF" viewBox="0 0 10 10" refX="3" refY="5" markerWidth="14" markerHeight="14" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 L3,5 z" fill="#9CA3AF"/></marker><marker id="aEA580C" viewBox="0 0 10 10" refX="3" refY="5" markerWidth="14" markerHeight="14" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 L3,5 z" fill="#EA580C"/></marker><marker id="aDC2626" viewBox="0 0 10 10" refX="3" refY="5" markerWidth="14" markerHeight="14" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 L3,5 z" fill="#DC2626"/></marker><marker id="a6B7280" viewBox="0 0 10 10" refX="3" refY="5" markerWidth="14" markerHeight="14" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 L3,5 z" fill="#6B7280"/></marker></defs>
+<rect width="1180" height="450" rx="20" fill="#FFFFFF"/>
 <g><rect x="30" y="150" width="230" height="110" rx="10" fill="#FFFFFF" stroke="#9CA3AF" stroke-width="2"/>
 <text x="145.0" y="201.0" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="24" font-weight="700" fill="#1F2937" text-anchor="middle">Claude</text>
 <text x="145.0" y="231.0" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="16" font-weight="400" fill="#6B7280" text-anchor="middle">claude.ai / Claude Code</text>
 </g>
-<rect x="330" y="30" width="400" height="420" rx="16" fill="none" stroke="#F4B183" stroke-width="2"/>
-<text x="352" y="66" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="22" font-weight="700" fill="#C2410C" text-anchor="start">Cloudflare</text>
+<rect x="330" y="70" width="400" height="270" rx="16" fill="none" stroke="#F4B183" stroke-width="2"/>
+<text x="352" y="106" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="22" font-weight="700" fill="#C2410C" text-anchor="start">Cloudflare</text>
 <g><rect x="370" y="150" width="320" height="110" rx="10" fill="#FFFFFF" stroke="#F4B183" stroke-width="2"/>
 <text x="530.0" y="201.0" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="24" font-weight="700" fill="#1F2937" text-anchor="middle">MCP Server Portal</text>
 <text x="530.0" y="231.0" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="16" font-weight="400" fill="#6B7280" text-anchor="middle">mcp.example.com</text>
 </g>
-<g><rect x="420" y="330" width="220" height="90" rx="10" fill="#FFFFFF" stroke="#F4B183" stroke-width="2"/>
-<text x="530.0" y="384.0" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="24" font-weight="700" fill="#1F2937" text-anchor="middle">Access</text>
-</g>
 <path d="M260,205 L357,205" fill="none" stroke="#EA580C" stroke-width="5" opacity="1" marker-end="url(#aEA580C)"/>
 <text x="295" y="130" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="18" font-weight="700" fill="#EA580C" text-anchor="middle">URL は 1 つ</text>
-<path d="M530,260 L530,317" fill="none" stroke="#6B7280" stroke-width="2.5" stroke-dasharray="8 6" opacity="1" marker-end="url(#a6B7280)"/>
-<text x="545" y="296" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="17" font-weight="500" fill="#6B7280" text-anchor="start">認証・認可</text>
 <g><rect x="880" y="40" width="270" height="100" rx="10" fill="#FFFFFF" stroke="#9CA3AF" stroke-width="2"/>
 <text x="1015.0" y="99.0" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="24" font-weight="700" fill="#1F2937" text-anchor="middle">MCP サーバー A</text>
 </g>
@@ -29,5 +24,5 @@
 <text x="1015.0" y="339.0" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="24" font-weight="700" fill="#1F2937" text-anchor="middle">MCP サーバー C</text>
 </g>
 <path d="M690,205 L780,205 L780,330 L867,330" fill="none" stroke="#EA580C" stroke-width="3" opacity="1" marker-end="url(#aEA580C)"/>
-<text x="1015" y="420" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="18" font-weight="500" fill="#6B7280" text-anchor="middle">社内の MCP サーバー</text>
+<text x="1015" y="420" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="18" font-weight="500" fill="#6B7280" text-anchor="middle">束ねる MCP サーバー</text>
 </svg>

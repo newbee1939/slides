@@ -16,5 +16,5 @@
 <text x="570" y="145" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="19" font-weight="700" fill="#6B7280" text-anchor="middle">① 内側から外向きに接続を張る</text>
 <path d="M360,220 L767,220" fill="none" stroke="#EA580C" stroke-width="5" opacity="1" marker-end="url(#aEA580C)"/>
 <text x="570" y="260" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="19" font-weight="700" fill="#EA580C" text-anchor="middle">② リクエストはこの接続を通って届く</text>
-<text x="590.0" y="420" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="22" font-weight="700" fill="#1F2937" text-anchor="middle">公開 IP も開放ポートも不要</text>
+<text x="590.0" y="420" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="22" font-weight="700" fill="#1F2937" text-anchor="middle">公開 IP もポート開放も不要</text>
 </svg>

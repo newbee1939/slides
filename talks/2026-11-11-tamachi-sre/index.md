@@ -77,11 +77,14 @@ style: |
   section.figure p { margin: 4px 0; }
   section.figure p:has(> img) { flex: 1 1 0; min-height: 0; margin-top: 40px; text-align: center; }
   section.figure img { width: 100%; height: 100%; object-fit: contain; }
+  section.full { padding: 120px 40px 24px; }
+  section.full p:has(> img) { margin-top: 0; }
+  section.end { background: #222222; }
 ---
 
 <!-- _class: lead -->
 
-# Cloudflare MCP Server Portal × Tunnel × Cloud Run で社内 MCP 基盤を構築した話
+# Cloudflare MCP Server Portal × Cloudflare Tunnel × Cloud Run で社内 MCP 基盤を構築した話
 
 2026-11-11 Tamachi.sre#7
 
@@ -94,7 +97,7 @@ style: |
 ![w:1000](h6o.jpeg)
 
 - hide
-- 開発エンジニア -> SRE
+- 開発エンジニア（PHP / TypeScript） -> SRE
 - 趣味
     - サッカー（長年）
     - ビリヤニ（最近）
@@ -110,7 +113,7 @@ style: |
 
 ## 背景
 
-- ビジネス側のメンバー（非エンジニア）も、**社内のデータを Claude から利用したい**という要望があった
+- ビジネス側のメンバーも、**社内のデータを Claude から利用したい**という要望があった
   - 例: AIに「この商材で過去に似た施策をやったことがあるか調べて」と頼むだけで、社内の施策データベースを検索できる
 - 社内 API はすでにあるが、ビジネス側のメンバーが直接使うのは現実的ではない
   - API ごとに URL や認証方式が違う
@@ -123,13 +126,11 @@ style: |
 
 - Claude アプリからの通信は、社内ではなく Anthropic の IP 範囲（`160.79.104.0/21`, `153.61.208.0/20`）から来る
 - MCP へのアクセスを社内 IP アドレスで制限するのは難しい
-- IP 制限ではなく、次の方針を取った
-
-> 入口（MCP Server Portal）だけをインターネットに公開し、リクエストのたびに認証・認可を行う。MCP サーバー本体はインターネットから届かない場所に置く（Zero Trust の考え方）
+- IP 制限ではなく、**入口だけをインターネットに公開し、リクエストのたびに認証・認可を行う**。MCP サーバー本体はインターネットから届かない場所に置く
 
 ---
 
-<!-- _class: figure -->
+<!-- _class: figure full -->
 
 ## アーキテクチャ
 
@@ -137,15 +138,11 @@ style: |
 
 ---
 
-ポイントを話す前に、前提となる知識を説明します
-
----
-
 <!-- _class: figure -->
 
-## Cloudflare MCP Server Portal とは
+## Cloudflare MCP Server Portal
 
-- 複数の MCP サーバーを 1 つの URL にまとめ、Cloudflare Access（誰を通すかを判定するアクセス制御機能）の認証・認可をかけて提供する Cloudflare の機能
+- 複数の MCP サーバーを 1 つの URL にまとめて提供する Cloudflare の機能
 
 ![](fig-portal.svg)
 
@@ -153,16 +150,15 @@ style: |
 
 <!-- _class: figure -->
 
-## Cloudflare Tunnel とは
+## Cloudflare Tunnel
 
 - サーバー側から Cloudflare へ暗号化された通信経路（Tunnel）を張り、**グローバル IP やポート開放なし**でサービスを届けられる仕組み
-- 主なつなぎ方は 2 つ（今回は **Private hostname**）
 
 ![](fig-tunnel.svg)
 
 ---
 
-<!-- _class: figure -->
+<!-- _class: figure full -->
 
 ## アーキテクチャ（再掲）
 
@@ -170,10 +166,11 @@ style: |
 
 ---
 
-## アーキテクチャのポイント
+<!-- _class: lead -->
 
+# なるべく「閉じる」
 
-なるべく「閉じる」
+アーキテクチャのポイント
 
 ---
 
@@ -187,7 +184,7 @@ style: |
 
 <!-- _class: figure -->
 
-## 閉じる ②: Tunnel で外から入る口を作らない
+## 閉じる ②: Cloudflare Tunnel で入口を作らない
 
 ![](fig-close-tunnel.svg)
 
@@ -218,7 +215,7 @@ WARP 端末（通信を Gateway に送るアプリを入れた社内 PC）から
 ## 原因と対処
 
 - 原因: Private hostname は「Gateway 経由なら届く」であって「Portal からしか届かない」ではなかった
-- 対処: Gateway の HTTP ポリシー（Firewall policies > HTTP）で、Traffic Source（通信の入口）が Portal 以外なら MCP サーバー宛てを Block
+- 対処: Gateway の HTTP ポリシーで、Traffic Source（通信の入口）が Portal 以外なら MCP サーバー宛てを Block
 
 ![](fig-fix.svg)
 
@@ -229,3 +226,7 @@ WARP 端末（通信を Gateway に送るアプリを入れた社内 PC）から
 - Cloudflare MCP Server Portal を使えば、MCP 基盤を簡単に作れる
 - Portal と Cloudflare Tunnel を組み合わせると、セキュアな構成にできる
 - ただし MCP サーバー宛ての通信を Portal 経由だけに制限しないと、WARP など Gateway を経由する通信から MCP サーバーに直接届いてしまうので注意
+
+---
+
+<!-- _class: end -->

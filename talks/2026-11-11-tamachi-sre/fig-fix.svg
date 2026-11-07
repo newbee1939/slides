@@ -13,9 +13,8 @@
 <rect x="400" y="215" width="300" height="200" rx="10" fill="#FFFFFF" stroke="#F4B183" stroke-width="2"/>
 <text x="550" y="253" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="24" font-weight="700" fill="#1F2937" text-anchor="middle">Gateway</text>
 <rect x="418" y="270" width="264" height="128" rx="8" fill="#FFFFFF" stroke="#DC2626" stroke-width="1.5"/>
-<text x="550" y="300" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="15" font-weight="700" fill="#DC2626" text-anchor="middle">Firewall policies › HTTP</text>
-<text x="550" y="336" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="17" font-weight="500" fill="#1F2937" text-anchor="middle">Traffic Source が Portal 以外</text>
-<text x="550" y="374" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="17" font-weight="700" fill="#DC2626" text-anchor="middle">→ MCP サーバー宛てを Block</text>
+<text x="550" y="322" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="17" font-weight="500" fill="#1F2937" text-anchor="middle">Traffic Source が Portal 以外</text>
+<text x="550" y="362" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="17" font-weight="700" fill="#DC2626" text-anchor="middle">→ MCP サーバー宛てを Block</text>
 <g><rect x="830" y="260" width="220" height="100" rx="10" fill="#FFFFFF" stroke="#F4B183" stroke-width="2"/>
 <text x="940.0" y="319.0" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="24" font-weight="700" fill="#1F2937" text-anchor="middle">Tunnel</text>
 </g>
