@@ -4,6 +4,7 @@
 
 | 日付 | タイトル | イベント | Speaker Deck |
 | --- | --- | --- | --- |
+| 2026-11-11 | Cloudflare MCP Server Portal × Cloudflare Tunnel × Cloud Run で社内 MCP 基盤を構築した話 | Tamachi.sre#7 | [h6o](https://speakerdeck.com/h6o) |
 
 ## 使い方
 
