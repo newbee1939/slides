@@ -92,10 +92,9 @@ style: |
 
 ## 自己紹介
 
-![w:280](h6o.jpeg)
+![w:1000](h6o.jpeg)
 
 - hide
-    - @newbee1939
 - 開発エンジニア -> SRE
 - 趣味
     - サッカー（長年）
@@ -117,7 +116,7 @@ style: |
 - 社内 API はすでにあるが、ビジネス側のメンバーが直接使うのは現実的ではない
   - API ごとに URL や認証方式が違う
   - 利用者一人ひとりに API キーを配るのはセキュリティ的に危ない
-- そこで、API の機能を MCP で提供することにした
+- API の機能を MCP で提供することにした
 
 ---
 
@@ -147,6 +146,8 @@ style: |
 
 - 複数の MCP サーバーを 1 つの URL にまとめ、Cloudflare Access（誰を通すかを判定するアクセス制御機能）の認証・認可をかけて提供する Cloudflare の機能
 
+<!-- 図を追加 -->
+
 ---
 
 ## Cloudflare Tunnel とは
@@ -155,6 +156,8 @@ style: |
 - 主なつなぎ方は 2 つ
   - Published application: インターネットに公開するホスト名を作り、Tunnel につなぐ
   - Private hostname: 公開せず、Cloudflare Gateway を通る通信だけが届く（**今回はこちら**）
+
+<!-- 図を追加 -->
 
 ---
 
@@ -166,30 +169,45 @@ style: |
 
 ---
 
-## なるべく「閉じる」
+## アーキテクチャのポイント
 
-Cloud Run の ingress は `internal`
 
----
-
-## なるべく「閉じる」
-
-Cloudflare Tunnel で、MCP サーバーにインターネット側の入口を作らない
+なるべく「閉じる」
 
 ---
 
-## なるべく「閉じる」
+## なるべく「閉じる」: Cloud Run の ingress は `internal`
 
-- Private hostname で、Cloudflare Gateway を通る通信だけが届くようにする
-  - Portal は Gateway を経由して Tunnel の Private hostname に届く（2026 年 9 月に追加された機能。[Private MCP server support for MCP server portals](https://developers.cloudflare.com/changelog/post/2026-09-22-private-mcp-servers/)）
+<!-- 図を貼る -->
 
 ---
 
-## ぶつかった壁と解決策
+## Cloudflare Tunnel で、MCP サーバーにインターネット側の入口を作らない
 
-- WARP 端末（通信を Gateway に送るアプリを入れた社内 PC）から Portal を迂回して MCP サーバーに届いてしまった
-  - 原因: Private hostname は「Gateway 経由なら届く」であって「Portal からしか届かない」ではなかった
-  - 対処: Gateway の Traffic Source（通信の入口）が Portal 以外なら、MCP サーバー宛てを Block
+<!-- 図を貼る -->
+
+---
+
+## Private hostname で、Cloudflare Gateway を通る通信だけが届くようにする
+
+Portal は Gateway を経由して Tunnel の Private hostname に届く（2026 年 9 月に追加された機能。[Private MCP server support for MCP server portals](https://developers.cloudflare.com/changelog/post/2026-09-22-private-mcp-servers/)）
+
+<!-- 図を貼る -->
+
+---
+
+## ぶつかった壁
+
+WARP 端末（通信を Gateway に送るアプリを入れた社内 PC）から Portal を迂回して MCP サーバーに届いてしまった
+
+<!-- 図を貼る -->
+
+## 原因と対処
+
+- 原因: Private hostname は「Gateway 経由なら届く」であって「Portal からしか届かない」ではなかった
+- 対処: Gateway の Traffic Source（通信の入口）が Portal 以外なら、MCP サーバー宛てを Block
+
+図を貼る
 
 ---
 
