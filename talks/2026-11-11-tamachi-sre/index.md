@@ -112,7 +112,7 @@ style: |
 
 ## 背景
 
-- ビジネス側のメンバー（非エンジニア）も、社内のデータを Claude から利用したいという要望があった
+- ビジネス側のメンバー（非エンジニア）も、**社内のデータを Claude から利用したい**という要望があった
   - 例: AIに「この商材で過去に似た施策をやったことがあるか調べて」と頼むだけで、社内の施策データベースを検索できる
 - 社内 API はすでにあるが、ビジネス側のメンバーが直接使うのは現実的ではない
   - API ごとに URL や認証方式が違う
@@ -151,7 +151,7 @@ style: |
 
 ## Cloudflare Tunnel とは
 
-- サーバー側から Cloudflare へ暗号化された通信経路（Tunnel）を張り、グローバル IP やポート開放なしでサービスを届けられる仕組み
+- サーバー側から Cloudflare へ暗号化された通信経路（Tunnel）を張り、**グローバル IP やポート開放なし**でサービスを届けられる仕組み
 - 主なつなぎ方は 2 つ
   - Published application: インターネットに公開するホスト名を作り、Tunnel につなぐ
   - Private hostname: 公開せず、Cloudflare Gateway を通る通信だけが届く（**今回はこちら**）
@@ -195,7 +195,7 @@ Cloudflare Tunnel で、MCP サーバーにインターネット側の入口を�
 
 ## なるべく「閉じる」
 
-- Private hostname route で、Cloudflare Gateway（Cloudflare 上で通信を検査・制御する関所）を通る通信だけが届くようにする
+- Private hostname route で、Cloudflare Gateway を通る通信だけが届くようにする
   - Portal は Gateway を経由して Tunnel の private ホスト名に届く（2026 年 9 月に追加された機能。[変更履歴](https://developers.cloudflare.com/changelog/post/2026-09-22-private-mcp-servers/)）
 
 ---
