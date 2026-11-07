@@ -20,7 +20,7 @@
 <text x="1058.0" y="401.0" font-family="'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="24" font-weight="700" fill="#1F2937" text-anchor="middle">Access</text>
 <rect x="934" y="644" width="216" height="136" rx="10" fill="#FFFFFF" stroke="#F4B183" stroke-width="2"/>
 <text x="1042.0" y="708.0" font-family="'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="24" font-weight="700" fill="#1F2937" text-anchor="middle">Tunnel</text>
-<text x="1042.0" y="740.0" font-family="'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="16" font-weight="400" fill="#6B7280" text-anchor="middle">Private hostname route</text>
+<text x="1042.0" y="740.0" font-family="'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="16" font-weight="400" fill="#6B7280" text-anchor="middle">Private hostname</text>
 <rect x="1464" y="324" width="236" height="136" rx="10" fill="#FFFFFF" stroke="#9CA3AF" stroke-width="2"/>
 <text x="1582.0" y="401.0" font-family="'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="24" font-weight="700" fill="#1F2937" text-anchor="middle">IdP</text>
 <rect x="1364" y="644" width="236" height="136" rx="10" fill="#FFFFFF" stroke="#93B4E8" stroke-width="2"/>
@@ -53,7 +53,7 @@
 <path d="M280,392 L490,392" fill="none" stroke="#EA580C" stroke-width="5" marker-end="url(#aEA580C)"/>
 <path d="M639,460 L639,592" fill="none" stroke="#EA580C" stroke-width="5" marker-end="url(#aEA580C)"/>
 <path d="M774,712 L920,712" fill="none" stroke="#EA580C" stroke-width="5" marker-end="url(#aEA580C)"/>
-<text x="784" y="672" font-family="'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="15" font-weight="500" fill="#EA580C" text-anchor="start">private ホスト名で</text>
+<text x="784" y="672" font-family="'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="15" font-weight="500" fill="#EA580C" text-anchor="start">Private hostname で</text>
 <text x="784" y="696" font-family="'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="15" font-weight="500" fill="#EA580C" text-anchor="start">Tunnel へ</text>
 <path d="M1150,712 L1350,712" fill="none" stroke="#EA580C" stroke-width="5" marker-end="url(#aEA580C)"/>
 <path d="M1482,780 L1482,835" fill="none" stroke="#EA580C" stroke-width="5" marker-end="url(#aEA580C)"/>

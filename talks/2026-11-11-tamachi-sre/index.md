@@ -127,7 +127,7 @@ style: |
 - MCP へのアクセスを社内 IP アドレスで制限するのは難しい
 - IP 制限ではなく、次の方針を取った
 
-> 入口（MCP Portal）だけをインターネットに公開し、リクエストのたびに認証・認可を行う。MCP サーバー本体はインターネットから届かない場所に置く（Zero Trust の考え方）
+> 入口（MCP Server Portal）だけをインターネットに公開し、リクエストのたびに認証・認可を行う。MCP サーバー本体はインターネットから届かない場所に置く（Zero Trust の考え方）
 
 ---
 
@@ -135,7 +135,7 @@ style: |
 
 ## アーキテクチャ
 
-![w:1300](architecture.svg)
+![w:1500](architecture.svg)
 
 ---
 
@@ -169,8 +169,7 @@ style: |
 ## アーキテクチャのポイント
 
 - なるべく「閉じる」
-    - アタックサーフェスを減らす
-- 論理MCP
+- 認証・認可は Cloudflare に寄せる
 
 ---
 
@@ -182,39 +181,36 @@ Cloud Run の ingress は `internal`
 
 ## なるべく「閉じる」
 
-- 認証・認可は Cloudflare Access と IdP（社員のログインを担うサービス）に任せる
-  - MCP サーバーの実装をシンプルに保てる
-
----
-
-## なるべく「閉じる」
-
 Cloudflare Tunnel で、MCP サーバーにインターネット側の入口を作らない
 
 ---
 
 ## なるべく「閉じる」
 
-- Private hostname route で、Cloudflare Gateway を通る通信だけが届くようにする
-  - Portal は Gateway を経由して Tunnel の private ホスト名に届く（2026 年 9 月に追加された機能。[変更履歴](https://developers.cloudflare.com/changelog/post/2026-09-22-private-mcp-servers/)）
+- Private hostname で、Cloudflare Gateway を通る通信だけが届くようにする
+  - Portal は Gateway を経由して Tunnel の Private hostname に届く（2026 年 9 月に追加された機能。[Private MCP server support for MCP server portals](https://developers.cloudflare.com/changelog/post/2026-09-22-private-mcp-servers/)）
 
 ---
 
-## 論理MCP
+## 認証・認可は Cloudflare に寄せる
 
-- 論理MCP
+- ログインと認可は Cloudflare Access と IdP（社員のログインを担うサービス）に任せる
+  - MCP サーバーには認証・認可を実装しない
+- 「論理 MCP」: 同じ MCP サーバーを Portal に 2 件登録し、許可するグループと有効にするツールを分ける
+  - MCP サーバーには手を入れずに、人によって使えるツールを変えられる
+
+```
+mcp-a : read_xxx だけ有効             / 許可: 閲覧グループ
+mcp-b : read_xxx と write_xxx を有効  / 許可: 編集グループ
+```
 
 ---
 
 ## ぶつかった壁と解決策
 
 - WARP 端末（通信を Gateway に送るアプリを入れた社内 PC）から Portal を迂回して MCP サーバーに届いてしまった
-  - 原因: private は「Gateway 経由なら届く」であって「Portal からしか届かない」ではなかった
+  - 原因: Private hostname は「Gateway 経由なら届く」であって「Portal からしか届かない」ではなかった
   - 対処: Gateway の Traffic Source（通信の入口）が Portal 以外なら、MCP サーバー宛てを Block
-- 同じ MCP サーバーでも、人によって使えるツールを変えたい
-  - 「論理 MCP」で対応（MCP サーバーには手を入れない）
-    - 同じサーバーを Portal に 2 件登録し、許可するユーザーと有効にするツールを分ける
-    - 例: `mcp-a` は `read_xxx` のみ / 閲覧グループ、`mcp-b` は `read_xxx` と `write_xxx` / 編集グループ
 
 ---
 
