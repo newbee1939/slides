@@ -49,7 +49,7 @@ style: |
   ul ul li::marker { color: var(--sky-deep); }
   li { margin-top: 0.4em; }
   blockquote {
-    background: var(--sky-pale);
+    background: var(--sky-soft);
     border: none;
     border-radius: 20px;
     color: var(--ink);
@@ -210,7 +210,7 @@ style: |
 
 ## ぶつかった壁
 
-- WARP 端末（通信を Gateway に送るアプリを入れた社内 PC）から Portal を迂回して MCP サーバーに届いてしまった
+- WARP 端末（通信を Gateway に送るアプリを入れた社内 PC）から、Portal を迂回して MCP サーバーに届いてしまった
 
 ![](fig-wall.svg)
 
