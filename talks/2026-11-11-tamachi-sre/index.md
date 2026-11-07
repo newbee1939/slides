@@ -145,7 +145,7 @@ style: |
 
 ## Cloudflare MCP Server Portal とは
 
-- 複数の MCP サーバーを 1 つの URL にまとめ、Cloudflare Access（誰を通すかを判定するアクセス制御機能）の認証・認可をかけて提供する Cloudflare Zero Trust の機能
+- 複数の MCP サーバーを 1 つの URL にまとめ、Cloudflare Access（誰を通すかを判定するアクセス制御機能）の認証・認可をかけて提供する Cloudflare の機能
 
 ---
 
@@ -154,7 +154,7 @@ style: |
 - 自宅や社内のサーバーからCloudflareへ暗号化された通信経路（Tunnel）を確立し、グローバルIPやポート開放なしでインターネットにサービスを公開できる仕組み
 - つなぎ方は 2 種類
   - Published application: インターネットに公開するホスト名を作り、Tunnel につなぐ
-  - Private hostname route: 公開せず、自社の Gateway を通る通信だけが届く（**今回はこちら**）
+  - Private hostname route: 公開せず、Cloudflare Gateway を通る通信だけが届く（**今回はこちら**）
 
 ---
 
@@ -189,13 +189,13 @@ Cloud Run の ingress は `internal`
 
 ## なるべく「閉じる」
 
-- Cloudflare Tunnel で、MCP サーバーにインターネット側の入口を作らない
+Cloudflare Tunnel で、MCP サーバーにインターネット側の入口を作らない
 
 ---
 
 ## なるべく「閉じる」
 
-- Private hostname route で、自社の Gateway（Cloudflare 上で通信を検査・制御する関所）を通る通信だけが届くようにする
+- Private hostname route で、Cloudflare Gateway（Cloudflare 上で通信を検査・制御する関所）を通る通信だけが届くようにする
   - Portal は Gateway を経由して Tunnel の private ホスト名に届く（2026 年 9 月に追加された機能。[変更履歴](https://developers.cloudflare.com/changelog/post/2026-09-22-private-mcp-servers/)）
 
 ---
@@ -212,8 +212,9 @@ Cloud Run の ingress は `internal`
   - 原因: private は「Gateway 経由なら届く」であって「Portal からしか届かない」ではなかった
   - 対処: Gateway の Traffic Source（通信の入口）が Portal 以外なら、MCP サーバー宛てを Block
 - 同じ MCP サーバーでも、人によって使えるツールを変えたい
-  - 論理 MCP で対応
-    - 同じサーバーを Portal に複数登録し、それぞれで許可するユーザーとツールを分ける
+  - 「論理 MCP」で対応（MCP サーバーには手を入れない）
+    - 同じサーバーを Portal に 2 件登録し、許可するユーザーと有効にするツールを分ける
+    - 例: `mcp-a` は `read_xxx` のみ / 閲覧グループ、`mcp-b` は `read_xxx` と `write_xxx` / 編集グループ
 
 ---
 
@@ -222,9 +223,3 @@ Cloud Run の ingress は `internal`
 - Cloudflare MCP Server Portal を使えば、MCP 基盤を簡単に作れる
 - Portal と Cloudflare Tunnel を組み合わせると、セキュアな構成にできる
 - ただし MCP サーバー宛ての通信を Portal 経由だけに制限しないと、WARP など Gateway を経由する通信から MCP サーバーに直接届いてしまうので注意
-
----
-
-<!-- _class: lead -->
-
-社内 MCP 基盤を構築するときの選択肢の 1 つになれば幸いです
