@@ -151,10 +151,10 @@ style: |
 
 ## Cloudflare Tunnel とは
 
-- 自宅や社内のサーバーからCloudflareへ暗号化された通信経路（Tunnel）を確立し、グローバルIPやポート開放なしでインターネットにサービスを公開できる仕組み
-- つなぎ方は 2 種類
+- サーバー側から Cloudflare へ暗号化された通信経路（Tunnel）を張り、グローバル IP やポート開放なしでサービスを届けられる仕組み
+- 主なつなぎ方は 2 つ
   - Published application: インターネットに公開するホスト名を作り、Tunnel につなぐ
-  - Private hostname route: 公開せず、Cloudflare Gateway を通る通信だけが届く（**今回はこちら**）
+  - Private hostname: 公開せず、Cloudflare Gateway を通る通信だけが届く（**今回はこちら**）
 
 ---
 
