@@ -207,7 +207,7 @@ WARP 端末（通信を Gateway に送るアプリを入れた社内 PC）から
 - 原因: Private hostname は「Gateway 経由なら届く」であって「Portal からしか届かない」ではなかった
 - 対処: Gateway の Traffic Source（通信の入口）が Portal 以外なら、MCP サーバー宛てを Block
 
-図を貼る
+<!-- 図を貼る -->
 
 ---
 
