@@ -162,29 +162,46 @@ style: |
 
 ## アーキテクチャ（再掲）
 
-![w:920](architecture.svg)
+![w:1300](architecture.svg)
 
 ---
 
 ## アーキテクチャのポイント
 
 - なるべく「閉じる」
-- 口は最小限にする
+    - アタックサーフェスを減らす
 - 論理MCP
 
 ---
 
-## アーキテクチャのポイント（詳細）
+## なるべく「閉じる」
 
-<!-- TODO: 一つずつ図で示してもいいかも -->
-<!-- TODO: 画像は増やしたい -->
+Cloud Run の ingress は `internal`
 
-- Cloud Run の ingress は `internal`
+---
+
+## なるべく「閉じる」
+
 - 認証・認可は Cloudflare Access と IdP（社員のログインを担うサービス）に任せる
   - MCP サーバーの実装をシンプルに保てる
+
+---
+
+## なるべく「閉じる」
+
 - Cloudflare Tunnel で、MCP サーバーにインターネット側の入口を作らない
+
+---
+
+## なるべく「閉じる」
+
 - Private hostname route で、自社の Gateway（Cloudflare 上で通信を検査・制御する関所）を通る通信だけが届くようにする
   - Portal は Gateway を経由して Tunnel の private ホスト名に届く（2026 年 9 月に追加された機能。[変更履歴](https://developers.cloudflare.com/changelog/post/2026-09-22-private-mcp-servers/)）
+
+---
+
+## 論理MCP
+
 - 論理MCP
 
 ---
