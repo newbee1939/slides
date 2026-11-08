@@ -122,6 +122,8 @@ style: |
 - MCP サーバーへのアクセスを社内 IP で制限するのは難しい
 - そこで、次の方針にした
 
+</br>
+
 > IP 制限ではなく、入口だけをインターネットに公開し、リクエストのたびに認証・認可を行う。MCP サーバー本体はインターネットから届かない場所に置く
 
 ---
@@ -174,7 +176,7 @@ style: |
 
 ## 閉じる ②: Private hostname でつなぐ
 
-Portal から Cloudflare Gateway を経由して Tunnel の Private hostname につなげる
+Portal から Cloudflare Gateway を経由して Tunnel の Private hostname につなぐ
 
 ![](fig-close-private.svg)
 
