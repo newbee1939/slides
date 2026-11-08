@@ -130,7 +130,7 @@ style: |
 
 ## Cloudflare MCP Server Portal
 
-- 複数の MCP サーバーを 1 つの URL にまとめて提供する Cloudflare の機能
+複数の MCP サーバーを 1 つの URL にまとめて提供する Cloudflare の機能
 
 ![](fig-portal.svg)
 
@@ -140,7 +140,7 @@ style: |
 
 ## Cloudflare Tunnel
 
-- サーバー側から Cloudflare へ暗号化された通信経路（Tunnel）を張り、**グローバル IP やポート開放なし**でサービスを届けられる仕組み
+サーバー側から Cloudflare へ暗号化された通信経路（Tunnel）を張り、**グローバル IP やポート開放なし**でサービスを届けられる仕組み
 
 ![](fig-tunnel.svg)
 
@@ -174,7 +174,7 @@ style: |
 
 ## 閉じる ②: Private hostname でつなぐ
 
-- Portal は Cloudflare Gateway を経由して Tunnel の Private hostname に繋ぐ
+Portal は Cloudflare Gateway を経由して Tunnel の Private hostname に繋ぐ
 
 ![](fig-close-private.svg)
 
@@ -184,7 +184,7 @@ style: |
 
 ## ぶつかった壁
 
-- WARP 端末（通信を Gateway に送るアプリを入れた社内 PC）から、Portal を迂回して MCP サーバーに届いてしまった
+WARP 端末（通信を Gateway に送るアプリを入れた社内 PC）から、Portal を迂回して MCP サーバーに届いてしまった
 
 ![](fig-wall.svg)
 
