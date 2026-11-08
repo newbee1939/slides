@@ -174,7 +174,7 @@ style: |
 
 ## 閉じる ②: Private hostname でつなぐ
 
-Portal は Cloudflare Gateway を経由して Tunnel の Private hostname につなぐ
+Portal から Cloudflare Gateway を経由して Tunnel の Private hostname につなげる
 
 ![](fig-close-private.svg)
 
