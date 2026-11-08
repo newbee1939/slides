@@ -99,7 +99,7 @@ style: |
 ![w:1000](h6o.jpeg)
 
 - hide
-- 開発エンジニア（PHP / TypeScript） -> SRE
+- 開発エンジニア -> SRE
 - 趣味
     - サッカー（長年）
     - ビリヤニ（最近）
