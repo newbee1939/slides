@@ -106,13 +106,6 @@ style: |
 
 ---
 
-## 今日のゴール
-
-- 社内 MCP 基盤を構築するときの選択肢を 1 つ知る
-- その構成のポイントや注意点を知る
-
----
-
 ## 背景
 
 - ビジネス側のメンバーも、**社内のデータを Claude から利用したい**という要望があった
@@ -130,16 +123,6 @@ style: |
 - そこで、次の方針にした
 
 > IP 制限ではなく、**入口だけをインターネットに公開し、リクエストのたびに認証・認可を行う**。MCP サーバー本体はインターネットから届かない場所に置く
-
----
-
-<!-- _class: figure full -->
-
-## アーキテクチャ
-
-![](architecture.svg)
-
-<!-- ポイントを話す前に、前提となる用語や機能についてお話しします -->
 
 ---
 
@@ -165,7 +148,7 @@ style: |
 
 <!-- _class: figure full -->
 
-## アーキテクチャ（再掲）
+## アーキテクチャ
 
 ![](architecture.svg)
 
@@ -189,15 +172,7 @@ style: |
 
 <!-- _class: figure -->
 
-## 閉じる ②: Cloudflare Tunnel で外から入れる口をなくす
-
-![](fig-close-tunnel.svg)
-
----
-
-<!-- _class: figure -->
-
-## 閉じる ③: Private hostname でつなぐ
+## 閉じる ②: Private hostname でつなぐ
 
 - Portal は Cloudflare Gateway を経由して Tunnel の Private hostname に繋ぐ
 
