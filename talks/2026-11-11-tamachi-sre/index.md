@@ -112,14 +112,14 @@ style: |
 - 社内 API はすでにあるが、ビジネス側のメンバーが直接使うのは現実的ではない
   - API ごとに URL や認証方式が違う
   - API キーを配るのはセキュリティ的に危ない
-- API の機能を MCP で提供することにした
+- MCP で提供することにした
 
 ---
 
 ## アーキテクチャの制約
 
 - Claude アプリからの通信は、社内ではなく Anthropic の IP 範囲（`160.79.104.0/21`, `153.61.208.0/20`）から来る
-- MCP サーバーへのアクセスを社内 IP アドレスで制限するのは難しい
+- MCP サーバーへのアクセスを社内 IP で制限するのは難しい
 - そこで、次の方針にした
 
 > IP 制限ではなく、**入口だけをインターネットに公開し、リクエストのたびに認証・認可を行う**。MCP サーバー本体はインターネットから届かない場所に置く
@@ -140,7 +140,7 @@ style: |
 
 ## Cloudflare Tunnel
 
-サーバー側から Cloudflare へ暗号化された通信経路（Tunnel）を張り、**グローバル IP やポート開放なし**でサービスを届けられる仕組み
+サーバー側から Cloudflare へ暗号化された通信経路（Tunnel）を張り、**グローバル IP やポート開放なし**でサービスを公開できる仕組み
 
 ![](fig-tunnel.svg)
 
@@ -184,7 +184,7 @@ Portal は Cloudflare Gateway を経由して Tunnel の Private hostname につ
 
 ## ぶつかった壁
 
-WARP 端末（通信を Gateway に送るアプリを入れた社内 PC）から、Portal を迂回して MCP サーバーに届いてしまった
+WARP 端末（通信を Cloudflare Gateway に送るアプリを入れた社内 PC）から、Portal を迂回して MCP サーバーに届いてしまった
 
 ![](fig-wall.svg)
 
@@ -194,7 +194,7 @@ WARP 端末（通信を Gateway に送るアプリを入れた社内 PC）から
 
 ## 原因と対処
 
-- 原因: Private hostname は「Gateway 経由なら届く」であって「Portal からしか届かない」ではなかった
+- 原因: Private hostname は「Cloudflare Gateway 経由なら届く」であって「Portal からしか届かない」ではなかった
 - 対処: Gateway の HTTP ポリシーで、Traffic Source（通信の入口）が Portal 以外なら MCP サーバー宛てをブロックする条件を追加
 
 ![](fig-fix.svg)
