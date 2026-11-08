@@ -116,7 +116,6 @@ style: |
 ## 背景
 
 - ビジネス側のメンバーも、**社内のデータを Claude から利用したい**という要望があった
-  - 例: AI に「この商材で過去に似た施策をやったことがあるか調べて」と頼むだけで、社内の施策データベースを検索できる
 - 社内 API はすでにあるが、ビジネス側のメンバーが直接使うのは現実的ではない
   - API ごとに URL や認証方式が違う
   - 利用者一人ひとりに API キーを配るのはセキュリティ的に危ない
@@ -126,7 +125,7 @@ style: |
 
 ## アーキテクチャの制約
 
-- Claude からの通信は、社内ではなく Anthropic の IP 範囲（`160.79.104.0/21`, `153.61.208.0/20`）から来る
+- Claude アプリからの通信は、社内ではなく Anthropic の IP 範囲（`160.79.104.0/21`, `153.61.208.0/20`）から来る
 - MCP サーバーへのアクセスを社内 IP アドレスで制限するのは難しい
 - そこで、次の方針にした
 
@@ -200,7 +199,7 @@ style: |
 
 ## 閉じる ③: Private hostname でつなぐ
 
-- Portal は Cloudflare Gateway を経由して Tunnel の Private hostname に届く（2026 年 9 月に追加された機能。[Private MCP server support for MCP server portals](https://developers.cloudflare.com/changelog/post/2026-09-22-private-mcp-servers/)）
+- Portal は Cloudflare Gateway を経由して Tunnel の Private hostname に繋ぐ
 
 ![](fig-close-private.svg)
 
@@ -221,7 +220,7 @@ style: |
 ## 原因と対処
 
 - 原因: Private hostname は「Gateway 経由なら届く」であって「Portal からしか届かない」ではなかった
-- 対処: Gateway の HTTP ポリシーで、Traffic Source（通信の入口）が Portal 以外なら MCP サーバー宛てを Block
+- 対処: Gateway の HTTP ポリシーで、Traffic Source（通信の入口）が Portal 以外なら MCP サーバー宛てをブロックする条件を追加
 
 ![](fig-fix.svg)
 
