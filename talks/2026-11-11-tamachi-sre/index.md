@@ -100,9 +100,7 @@ style: |
 
 - hide
 - 開発エンジニア → SRE
-- 趣味
-    - サッカー（長年）
-    - ビリヤニ（最近）
+- 趣味: サッカー、ビリヤニ
 
 ---
 
@@ -184,7 +182,7 @@ Portal から Cloudflare Gateway を経由して Tunnel の Private hostname に
 
 <!-- _class: figure -->
 
-## ぶつかった壁
+## 発生した問題
 
 WARP 端末（通信を Cloudflare Gateway に送るアプリを入れた社内 PC）から、Portal を迂回して MCP サーバーに届いてしまった
 

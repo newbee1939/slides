@@ -21,5 +21,5 @@
 <path d="M900,335 L753,335" fill="none" stroke="#DC2626" stroke-width="2.5" stroke-dasharray="8 6" opacity="1" marker-end="url(#aDC2626)"/>
 <rect x="794" y="318" width="72" height="34" rx="6" fill="#FFFFFF" stroke="#DC2626" stroke-width="2"/>
 <text x="830" y="341" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="18" font-weight="700" fill="#DC2626" text-anchor="middle">遮断</text>
-<text x="580.0" y="470" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="22" font-weight="700" fill="#1F2937" text-anchor="middle">Gateway を通る通信だけが Tunnel に届く。公開ホスト名が無いので外からは届かない</text>
+<text x="580.0" y="470" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="22" font-weight="700" fill="#1F2937" text-anchor="middle">Gateway を通る通信だけが Tunnel に届く。インターネットからの通信は遮断</text>
 </svg>
