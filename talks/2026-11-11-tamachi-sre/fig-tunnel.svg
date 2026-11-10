@@ -2,8 +2,8 @@
 <rect width="1240" height="520" rx="20" fill="#FFFFFF"/>
 <text x="30" y="30" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="22" font-weight="700" fill="#1F2937" text-anchor="start">Published application</text>
 <g><rect x="30" y="55" width="320" height="110" rx="10" fill="#FFFFFF" stroke="#9CA3AF" stroke-width="2"/>
-<text x="190.0" y="106.0" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="24" font-weight="700" fill="#1F2937" text-anchor="middle">インターネット</text>
-<text x="190.0" y="136.0" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="16" font-weight="400" fill="#6B7280" text-anchor="middle">誰でも</text>
+<text x="190.0" y="119.0" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="24" font-weight="700" fill="#1F2937" text-anchor="middle">インターネット</text>
+
 </g>
 <g><rect x="520" y="55" width="220" height="110" rx="10" fill="#FFFFFF" stroke="#F4B183" stroke-width="2"/>
 <text x="630.0" y="119.0" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="24" font-weight="700" fill="#1F2937" text-anchor="middle">Tunnel</text>
@@ -13,14 +13,14 @@
 <text x="1080.0" y="136.0" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="16" font-weight="400" fill="#6B7280" text-anchor="middle">サーバー側</text>
 </g>
 <path d="M350,115 L507,115" fill="none" stroke="#EA580C" stroke-width="5" opacity="1" marker-end="url(#aEA580C)"/>
-<text x="430" y="100" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="15" font-weight="500" fill="#EA580C" text-anchor="middle">公開ホスト名で</text>
+<text x="430" y="100" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="15" font-weight="500" fill="#EA580C" text-anchor="middle">公開ホスト名</text>
 <path d="M950,83 L753,83" fill="none" stroke="#6B7280" stroke-width="2.5" opacity="1" marker-end="url(#a6B7280)"/>
 <text x="845" y="71" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="16" font-weight="500" fill="#6B7280" text-anchor="middle">内側から接続</text>
 <path d="M740,135 L937,135" fill="none" stroke="#EA580C" stroke-width="5" opacity="1" marker-end="url(#aEA580C)"/>
-<text x="30" y="280" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="22" font-weight="700" fill="#1F2937" text-anchor="start">Private hostname（今回）</text>
+<text x="30" y="280" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="22" font-weight="700" fill="#1F2937" text-anchor="start">Private hostname</text>
 <g><rect x="30" y="305" width="320" height="110" rx="10" fill="#FFFFFF" stroke="#9CA3AF" stroke-width="2"/>
 <text x="190.0" y="356.0" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="24" font-weight="700" fill="#1F2937" text-anchor="middle">Cloudflare Gateway</text>
-<text x="190.0" y="386.0" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="16" font-weight="400" fill="#6B7280" text-anchor="middle">経由（Portal / WARP 端末）</text>
+<text x="190.0" y="386.0" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="16" font-weight="400" fill="#6B7280" text-anchor="middle">Portal / WARP 端末</text>
 </g>
 <g><rect x="520" y="305" width="220" height="110" rx="10" fill="#FFFFFF" stroke="#F4B183" stroke-width="2"/>
 <text x="630.0" y="369.0" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="24" font-weight="700" fill="#1F2937" text-anchor="middle">Tunnel</text>
@@ -30,7 +30,7 @@
 <text x="1080.0" y="386.0" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="16" font-weight="400" fill="#6B7280" text-anchor="middle">サーバー側</text>
 </g>
 <path d="M350,365 L507,365" fill="none" stroke="#EA580C" stroke-width="5" opacity="1" marker-end="url(#aEA580C)"/>
-<text x="430" y="350" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="15" font-weight="500" fill="#EA580C" text-anchor="middle">Private hostname で</text>
+<text x="430" y="350" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="15" font-weight="500" fill="#EA580C" text-anchor="middle">Private hostname</text>
 <path d="M950,333 L753,333" fill="none" stroke="#6B7280" stroke-width="2.5" opacity="1" marker-end="url(#a6B7280)"/>
 <text x="845" y="321" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="16" font-weight="500" fill="#6B7280" text-anchor="middle">内側から接続</text>
 <path d="M740,385 L937,385" fill="none" stroke="#EA580C" stroke-width="5" opacity="1" marker-end="url(#aEA580C)"/>
@@ -41,5 +41,5 @@
 <path d="M350,472 L630,472 L630,428" fill="none" stroke="#DC2626" stroke-width="2.5" stroke-dasharray="8 6" opacity="1" marker-end="url(#aDC2626)"/>
 <rect x="454" y="455" width="72" height="34" rx="6" fill="#FFFFFF" stroke="#DC2626" stroke-width="2"/>
 <text x="490" y="478" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="18" font-weight="700" fill="#DC2626" text-anchor="middle">遮断</text>
-<text x="650" y="478" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="17" font-weight="700" fill="#DC2626" text-anchor="start">公開ホスト名が無いので届かない</text>
+
 </svg>
