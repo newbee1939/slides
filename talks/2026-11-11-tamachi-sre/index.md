@@ -210,7 +210,7 @@ Gateway の HTTP ポリシーで、Traffic Source（通信の入口）が Portal
 
 - Cloudflare MCP Server Portal を使えば、MCP 基盤を簡単に作れる
 - Portal と Cloudflare Tunnel を組み合わせると、セキュアな構成にできる
-- ただし MCP サーバー宛ての通信は **Portal 経由だけに制限する**。制限しないと WARP など Gateway 経由の通信から直接届いてしまう
+- ただし、WARP など Gateway 経由の通信も直接届いてしまうので、MCP サーバー宛ての通信は **Portal 経由だけに制限する**
 
 ---
 
