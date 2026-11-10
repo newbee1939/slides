@@ -7,8 +7,8 @@
 <text x="150.0" y="319.0" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="24" font-weight="700" fill="#1F2937" text-anchor="middle">WARP 端末</text>
 </g>
 <g><rect x="400" y="30" width="300" height="100" rx="10" fill="#FFFFFF" stroke="#F4B183" stroke-width="2"/>
-<text x="550.0" y="76.0" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="24" font-weight="700" fill="#1F2937" text-anchor="middle">MCP Server Portal</text>
-<text x="550.0" y="106.0" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="16" font-weight="400" fill="#6B7280" text-anchor="middle">Access・ツール制限</text>
+<text x="550.0" y="89.0" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="24" font-weight="700" fill="#1F2937" text-anchor="middle">MCP Server Portal</text>
+
 </g>
 <rect x="400" y="215" width="300" height="200" rx="10" fill="#FFFFFF" stroke="#F4B183" stroke-width="2"/>
 <text x="550" y="253" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="24" font-weight="700" fill="#1F2937" text-anchor="middle">Gateway</text>
