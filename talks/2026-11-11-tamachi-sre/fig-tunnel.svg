@@ -13,7 +13,7 @@
 <text x="1080.0" y="136.0" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="16" font-weight="400" fill="#6B7280" text-anchor="middle">サーバー側</text>
 </g>
 <path d="M350,115 L507,115" fill="none" stroke="#EA580C" stroke-width="5" opacity="1" marker-end="url(#aEA580C)"/>
-<text x="430" y="100" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="15" font-weight="500" fill="#EA580C" text-anchor="middle">公開ホスト名</text>
+<text x="430" y="100" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="15" font-weight="500" fill="#EA580C" text-anchor="middle">Public hostname</text>
 <path d="M950,83 L753,83" fill="none" stroke="#6B7280" stroke-width="2.5" opacity="1" marker-end="url(#a6B7280)"/>
 <text x="845" y="71" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="16" font-weight="500" fill="#6B7280" text-anchor="middle">内側から接続</text>
 <path d="M740,135 L937,135" fill="none" stroke="#EA580C" stroke-width="5" opacity="1" marker-end="url(#aEA580C)"/>
