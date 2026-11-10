@@ -24,10 +24,10 @@
 </g>
 <path d="M270,80 L387,80" fill="none" stroke="#EA580C" stroke-width="5" opacity="1" marker-end="url(#aEA580C)"/>
 <path d="M550,130 L550,202" fill="none" stroke="#EA580C" stroke-width="5" opacity="1" marker-end="url(#aEA580C)"/>
-<path d="M700,290 L817,290" fill="none" stroke="#EA580C" stroke-width="5" opacity="1" marker-end="url(#aEA580C)"/>
-<path d="M1050,290 L1137,290" fill="none" stroke="#EA580C" stroke-width="5" opacity="1" marker-end="url(#aEA580C)"/>
-<path d="M270,330 L387,330" fill="none" stroke="#DC2626" stroke-width="2.5" stroke-dasharray="8 6" opacity="1" marker-end="url(#aDC2626)"/>
-<rect x="294" y="313" width="72" height="34" rx="6" fill="#FFFFFF" stroke="#DC2626" stroke-width="2"/>
-<text x="330" y="336" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="18" font-weight="700" fill="#DC2626" text-anchor="middle">遮断</text>
+<path d="M700,310 L817,310" fill="none" stroke="#EA580C" stroke-width="5" opacity="1" marker-end="url(#aEA580C)"/>
+<path d="M1050,310 L1137,310" fill="none" stroke="#EA580C" stroke-width="5" opacity="1" marker-end="url(#aEA580C)"/>
+<path d="M270,310 L387,310" fill="none" stroke="#DC2626" stroke-width="2.5" stroke-dasharray="8 6" opacity="1" marker-end="url(#aDC2626)"/>
+<rect x="294" y="293" width="72" height="34" rx="6" fill="#FFFFFF" stroke="#DC2626" stroke-width="2"/>
+<text x="330" y="316" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="18" font-weight="700" fill="#DC2626" text-anchor="middle">遮断</text>
 
 </svg>
