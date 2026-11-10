@@ -200,7 +200,7 @@ Private hostname で保証されるのは「Gateway 経由なら届く」こと�
 
 ## 対処
 
-Gateway の HTTP ポリシーで、Traffic Source（通信元） が Portal 以外なら MCP サーバー宛てをブロックする条件を追加
+Gateway の HTTP ポリシーで、Traffic Source（通信元）が Portal 以外なら MCP サーバー宛てをブロックする条件を追加
 
 ![](fig-fix.svg)
 
