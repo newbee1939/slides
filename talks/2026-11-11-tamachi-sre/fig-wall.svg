@@ -17,8 +17,8 @@
 <text x="940.0" y="319.0" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="24" font-weight="700" fill="#1F2937" text-anchor="middle">Tunnel</text>
 </g>
 <g><rect x="1150" y="260" width="220" height="100" rx="10" fill="#FFFFFF" stroke="#93B4E8" stroke-width="2"/>
-<text x="1260.0" y="306.0" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="24" font-weight="700" fill="#1F2937" text-anchor="middle">MCP サーバー</text>
-<text x="1260.0" y="336.0" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="16" font-weight="400" fill="#6B7280" text-anchor="middle">認証なし</text>
+<text x="1260.0" y="319.0" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="24" font-weight="700" fill="#1F2937" text-anchor="middle">MCP サーバー</text>
+
 </g>
 <path d="M270,80 L387,80" fill="none" stroke="#EA580C" stroke-width="5" opacity="1" marker-end="url(#aEA580C)"/>
 <path d="M550,130 L550,247" fill="none" stroke="#EA580C" stroke-width="5" opacity="1" marker-end="url(#aEA580C)"/>

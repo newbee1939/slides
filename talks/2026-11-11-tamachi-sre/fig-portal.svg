@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1180" height="420" viewBox="0 0 1180 420"><defs><marker id="a9CA3AF" viewBox="0 0 10 10" refX="3" refY="5" markerWidth="14" markerHeight="14" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 L3,5 z" fill="#9CA3AF"/></marker><marker id="aEA580C" viewBox="0 0 10 10" refX="3" refY="5" markerWidth="14" markerHeight="14" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 L3,5 z" fill="#EA580C"/></marker><marker id="aDC2626" viewBox="0 0 10 10" refX="3" refY="5" markerWidth="14" markerHeight="14" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 L3,5 z" fill="#DC2626"/></marker><marker id="a6B7280" viewBox="0 0 10 10" refX="3" refY="5" markerWidth="14" markerHeight="14" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 L3,5 z" fill="#6B7280"/></marker></defs>
 <rect width="1180" height="450" rx="20" fill="#FFFFFF"/>
 <g><rect x="30" y="150" width="230" height="110" rx="10" fill="#FFFFFF" stroke="#9CA3AF" stroke-width="2"/>
-<text x="145.0" y="201.0" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="24" font-weight="700" fill="#1F2937" text-anchor="middle">Claude</text>
-<text x="145.0" y="231.0" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="16" font-weight="400" fill="#6B7280" text-anchor="middle">claude.ai / Claude Code</text>
+<text x="145.0" y="214.0" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="24" font-weight="700" fill="#1F2937" text-anchor="middle">Claude</text>
+
 </g>
 <rect x="330" y="70" width="400" height="270" rx="16" fill="none" stroke="#F4B183" stroke-width="2"/>
 <text x="352" y="106" font-family="'BIZ UDPGothic', 'Hiragino Sans', sans-serif" font-size="22" font-weight="700" fill="#C2410C" text-anchor="start">Cloudflare</text>
