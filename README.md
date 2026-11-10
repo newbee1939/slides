@@ -29,4 +29,5 @@ npm run pdf -- talks/YYYY-MM-DD-slug/index.md -o YYYY-MM-DD-slug.pdf  # Speaker 
 ## プレゼンのTips
 
 - いかに認知の負荷（聞き手が理解するのに使う頭の容量）を下げるか
+    - 聞き手がスライドを見てから理解するまでの時間をなるべく短くする
 - 徹底的に相手の視点に立つ

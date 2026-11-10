@@ -190,12 +190,19 @@ WARP 端末（通信を Cloudflare Gateway に送るアプリを入れた社内 
 
 ---
 
+<style scoped>section > p { font-size: 44px; font-weight: 700; color: var(--sky-deep); }</style>
+
+## 原因
+
+Private hostname は「Gateway 経由なら届く」であって「Portal からしか届かない」ではない
+
+---
+
 <!-- _class: figure -->
 
-## 原因と対処
+## 対処
 
-- 原因: Private hostname は「Cloudflare Gateway 経由なら届く」であって「Portal からしか届かない」ではなかった
-- 対処: Gateway の HTTP ポリシーで、Traffic Source（通信の入口）が Portal 以外なら MCP サーバー宛てをブロックする条件を追加
+Gateway の HTTP ポリシーで、Traffic Source（通信の入口）が Portal 以外なら MCP サーバー宛てをブロックする条件を追加
 
 ![](fig-fix.svg)
 
