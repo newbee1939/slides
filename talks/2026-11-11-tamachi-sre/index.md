@@ -192,7 +192,7 @@ WARP 端末（通信を Gateway に送るアプリを入れた社内 PC）から
 
 ## 原因
 
-Private hostname で保証されるのは「Gateway 経由なら届く」ことだけで、「Portal からしか届かない」わけではない
+Private hostname は、Portal 専用の入口ではない。Gateway を通る通信なら届く
 
 ---
 
