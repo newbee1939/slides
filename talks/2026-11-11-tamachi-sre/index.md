@@ -118,7 +118,7 @@ style: |
 - MCP サーバーへのアクセスを社内 IP で制限するのは難しい
 - そこで、次の方針にした
 
-</br>
+<br>
 
 > IP 制限ではなく、入口だけをインターネットに公開し、リクエストのたびに認証・認可を行う。MCP サーバー本体はインターネットから届かない場所に置く
 
@@ -182,7 +182,7 @@ Portal から Cloudflare Gateway（Cloudflare を通る通信を検査・制御�
 
 ## 発生した問題
 
-WARP 端末（通信を Gateway に送るアプリを入れた社内 PC）から、Portal を迂回して MCP サーバーに届いてしまった
+WARP 端末（通信を Gateway に送るアプリを入れた社内 PC）からの通信が、Portal を迂回して MCP サーバーに届いてしまった
 
 ![](fig-wall.svg)
 
@@ -192,7 +192,7 @@ WARP 端末（通信を Gateway に送るアプリを入れた社内 PC）から
 
 ## 原因
 
-Private hostname は「Gateway 経由なら届く」であって「Portal からしか届かない」ではない
+Private hostname は「Gateway 経由なら届く」という意味であって、「Portal からしか届かない」という意味ではない
 
 ---
 
@@ -210,7 +210,7 @@ Gateway の HTTP ポリシーで、Traffic Source（通信の入口）が Portal
 
 - Cloudflare MCP Server Portal を使えば、MCP 基盤を簡単に作れる
 - Portal と Cloudflare Tunnel を組み合わせると、セキュアな構成にできる
-- ただし MCP サーバー宛ての通信は **Portal 経由だけに制限する**。しないと WARP など Gateway 経由の通信から直接届いてしまう
+- ただし MCP サーバー宛ての通信は **Portal 経由だけに制限する**。制限しないと WARP など Gateway 経由の通信から直接届いてしまう
 
 ---
 
