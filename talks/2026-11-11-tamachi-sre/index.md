@@ -106,11 +106,9 @@ style: |
 
 ## 背景
 
-- ビジネス側のメンバーも、**社内のデータを Claude から利用したい**という要望があった
-- 社内 API はすでにあるが、ビジネス側のメンバーが直接使うのは現実的ではない
-  - API ごとに URL や認証方式が違う
-  - API キーを配るのは危ない
-- MCP 経由で使えるようにした
+- ビジネス側のメンバーも **社内のデータを Claude から使いたい**
+- でも社内 API を直接使うのは厳しい（URL・認証がバラバラ、API キー配布は危ない）
+- → MCP 経由で使えるようにした
 
 ---
 
@@ -130,7 +128,7 @@ style: |
 
 ## Cloudflare MCP Server Portal
 
-複数の MCP サーバーを 1 つの URL にまとめて提供する Cloudflare の機能
+複数の MCP サーバーを 1 つの URL にまとめ、Cloudflare Access（誰がアクセスできるかをポリシーで判定する機能）で守って提供する Cloudflare の機能
 
 ![](fig-portal.svg)
 
@@ -174,7 +172,7 @@ style: |
 
 ## 閉じる ②: Private hostname でつなぐ
 
-Portal から Cloudflare Gateway を経由して Tunnel の Private hostname につなぐ
+Portal から Cloudflare Gateway（Cloudflare を通る通信を検査・制御する機能）を経由して、Tunnel の Private hostname につなぐ
 
 ![](fig-close-private.svg)
 
@@ -184,7 +182,7 @@ Portal から Cloudflare Gateway を経由して Tunnel の Private hostname に
 
 ## 発生した問題
 
-WARP 端末（通信を Cloudflare Gateway に送るアプリを入れた社内 PC）から、Portal を迂回して MCP サーバーに届いてしまった
+WARP 端末（通信を Gateway に送るアプリを入れた社内 PC）から、Portal を迂回して MCP サーバーに届いてしまった
 
 ![](fig-wall.svg)
 
@@ -212,7 +210,7 @@ Gateway の HTTP ポリシーで、Traffic Source（通信の入口）が Portal
 
 - Cloudflare MCP Server Portal を使えば、MCP 基盤を簡単に作れる
 - Portal と Cloudflare Tunnel を組み合わせると、セキュアな構成にできる
-- ただし MCP サーバー宛ての通信を Portal 経由だけに制限しないと、WARP など Gateway を経由する通信から MCP サーバーに直接届いてしまうので注意
+- ただし MCP サーバー宛ての通信は **Portal 経由だけに制限する**。しないと WARP など Gateway 経由の通信から直接届いてしまう
 
 ---
 
